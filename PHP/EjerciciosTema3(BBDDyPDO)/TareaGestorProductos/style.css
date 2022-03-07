@@ -1,0 +1,95 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    background-color: thistle;
+}
+
+#contenedorGeneral{
+    display: flex;
+    flex-direction: column;
+    background-color: turquoise;
+    border: 5px solid black;
+    border-radius: 20px;
+    margin: 5vh 20vw;
+    flex-wrap: wrap;
+    padding: 1vh;
+}
+
+#formulario{
+    display: flex;
+    margin: auto;
+
+}
+
+#parrafoSeleccion{
+    display: flex;
+    font-size: 2em;
+    margin: 10px 10px;
+    align-self: center;
+    border: 3px solid black;
+    border-radius: 20px;
+    padding: 1vh;
+    margin-bottom: 5vh;
+}
+
+#selector{
+    text-align: center;
+    display: flex;
+    width: 20vw;
+    margin-bottom: 1vh;
+}
+
+#botonEnviar{
+    width: 8vw;
+    display: flex;
+    margin: auto;
+    margin-bottom: 5vh;
+}
+
+#opciones{
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    justify-self: center;
+    justify-items: center;
+    align-content: center;
+    align-self: center;
+    align-items: center;
+    border: 3px solid black;
+    border-radius: 5px;
+    margin: 1vh 1vw;
+    padding: 1vh;
+}
+
+#editarProducto{
+    display: flex;
+    margin-top: 1vh;
+    text-decoration: none;
+}
+
+/*---------------------------------------------------------*/
+
+#editar{
+    display: flex;
+    margin: auto;
+    margin-top: 2vh;
+    width: 10vw;
+}
+
+#cancelar{
+    display: flex;
+    margin: auto;
+    margin-top: 1vh;
+    width: 10vw;
+}
+
+#nombreCorto,#nombreProducto,#descripcion,#precio{
+    display: flex;
+    margin-top: 1vh;
+
+}
