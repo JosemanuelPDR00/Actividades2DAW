@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica 2</title>
+</head>
+<body>
+    <script>
+
+        //clase ordenador con los atributos
+        function Ordenador(marca, modelo, ram=4, disco=512, pulgadas=17){
+            //Atributos
+            this.marca=marca;
+            this.modelo=modelo;
+            this.ram=ram;
+            this.disco=disco;
+            this.pulgadas=pulgadas;
+            //metodo toString que nos mostrara los datos con formato
+            this.toString= function(){
+                return "Marca: ", this.marca ,", Modelo: ", this.modelo ,", RAM: ", this.ram ,", Disco Duro: ", this.disco , ", Pulgadas: ", this.pulgadas;
+            }
+        }
+
+        //clase portatil con sus atributos
+        function Portatil(marca, modelo, ram, disco, pulgadas, autonomia){
+            //heredamos un prototipo de la clase ordenador
+            this.__proto__ = new Ordenador(marca, modelo, ram, disco, pulgadas);
+            //Atributo
+            this.autonomia=autonomia;
+            //metodo toString que nos mostrara los datos con formato
+            this.toString = function(){
+                return "Marca: ", this.marca ,", Modelo: ", this.modelo ,", RAM: ", this.ram ,", Disco Duro: ", this.disco , ", Pulgadas: ", this.pulgadas ,", Autonomia: ",this.autonomia;
+            }
+        }
+
+        //Instancia con valores incompletos
+        let ordenador1 = new Ordenador("MSI","MEG Trident X 11TD-1635EU");
+        //Instancia con todos los valores
+        let ordenador2 = new Ordenador("Lenovo","Serie 4", 8, 1024, 15.6);
+
+        //Instancia con valores incompletos
+        let portatil1 = new Portatil("Asus", "Rog Trix");
+        //Instancia con todos los valores
+        let portatil2 = new Portatil("Gigabyte", "Model X", 16, 1024, 17, 21);
+        
+        //Mostar datos
+        console.log(ordenador1);
+        console.log(ordenador2);
+
+        console.log(portatil1);
+        console.log(portatil2);
+
+    </script>
+</body>
+</html>

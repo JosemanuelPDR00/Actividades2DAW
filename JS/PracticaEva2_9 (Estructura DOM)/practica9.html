@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section id="s1">
+        <h1>Titulo</h1>
+        <p>Ejemplo de documento <strong>DOM</strong> Vision en arbol</p>
+    </section>
+    <section id="s2">
+        <p>Aqui solo hay texto</p>
+    </section>
+
+    <script>
+        //recogemos en variable el selector html
+        var dom = document.querySelector('html');
+
+        //llamada a la funcion y lo mostramos por console.log
+        console.log(loop(dom));
+
+        //funcion que va a mostrar los nodos del dom con sus atributos
+        function loop(nodo){
+            
+            //guardamos en la variable el nodo hijo
+            var nodos = nodo.childNodes;
+
+            //recogemos por el tamaño de hijos cada nodo
+            for (var i = 0; i <nodos.length; i++){
+                
+                //si no hay mas nodos hijos, continuamos
+                if(!nodos[i]){
+                    continue;
+                }
+
+                //si hay nodos hijos, lo recorremos
+                if(nodos[i].childNodes.length > 0){
+                    //recursividad para recorrer los demas nodos hijos
+                    loop(nodos[i]);
+                }
+            }
+
+            //si el nodo existe, muestrame su etiqueta y sus atributos 
+            if(nodo){
+                console.dir(nodo.nodeName);
+                console.log(nodo.attributes);
+            }
+        }
+
+    </script>
+
+
+</body>
+</html>

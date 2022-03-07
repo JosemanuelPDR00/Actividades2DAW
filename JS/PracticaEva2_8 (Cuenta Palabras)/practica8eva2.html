@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica 8 EVA 2</title>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio doloremque magnam nesciunt! Laborum odit consectetur nulla ipsum, deleniti tempora dicta, quis, enim soluta cum distinctio laboriosam aperiam? Excepturi, incidunt nulla.</p>
+    <p>Omnis, officiisconseq uuntur vero suscipit necessitatibus enim saepe, rem ex doloremque nisi facilis molestias laudantium reprehenderit tempora tempore est asperiores doloribus, corrupti ipsa similique earum provident temporibus? A, laborum consequuntur!</p>
+    <p>Facere consequaturquib usdam et, fugiat nesciunt consectetur! Assumenda totam voluptas amet vel dicta rerum quos voluptates cupiditate esse animi eos necessitatibus, optio placeat quasi. Ipsa quisquam non optio velit nobis.</p>
+    <p>Libero praesentium saepe tenetur ipsam minima! Accusamus quod deleniti vero, recusandae ut harum autem ab, eaque numquam soluta porro non officia ex repudiandae ducimus facilis alias id sint nam tenetur!</p>
+    <p>Deleniti omnis aperiam iste laudantium ad minus, commodi quaerat aspernatur nihil? Eum, pariatur. Nemo, unde eveniet? Eligendi voluptatum doloremque, suscipit vel perspiciatis deleniti molestias, eum distinctio, quia error non cupiditate?</p>
+
+
+    <script>
+        //cogemos todas los parrafos por su etiqueta
+        var parrafos = document.getElementsByTagName('p');
+        //creamos una variable contadora de espacios
+        var contadorGeneral = 0;
+
+        //funcion que cuenta los espacios de un parrafo
+        function espacios(parrafo){
+            //variable que almacena los espacios
+            var espacios = 0;
+
+            //si el parrafo empieza por uno o mas espacios
+            //lo reemplazamos por vacio, es decir los quitamos
+            if(parrafo.innerText.match(/^\s+/)){
+                parrafo.innerText.replace(/^\s+/,"");
+            }
+            
+            //si el parrafo termina por uno o mas espacios
+            //lo reemplazamos por vacio, es decir los quitamos
+            if(parrafo.innerText.match(/\s+$/)){
+                parrafo.innerText.replace(/\s+$/,"");
+            }
+
+            //recorremos los parrafos
+            for(letra of parrafo.innerText){
+                //si hay un espacio sumamos uno al contador
+                if(letra.match(/\s/)){
+                    espacios++;
+                //si hay dos espacios por el parrafo, sumamos solo uno al contador
+                }else if(letra.match(/\s\s/)){
+                    espacios++;
+
+                //si hay tres espacios por el parrafo, solo sumamos uno
+                }else if(letra.match(/\s\s\s/)){
+                    espacios++;
+                }
+            }
+
+            //devolvemos los espacios recogidos en este parrafo
+            return espacios;
+        }
+
+        //recorremos los parrafos y vamos sumando los encontrados
+        //en la variable general de espacios
+        for(parrafo of parrafos){
+            contadorGeneral+=espacios(parrafo);
+        }
+
+        //creo un parrafo nuevo
+        let parrafoNuevo = document.createElement('p');
+        //creo en su interior una frase que nos dirá el numero de espacios
+        parrafoNuevo.innerText="EL NUMERO DE ESPACIOS ENCONTRADOS ES "+contadorGeneral;
+        //cogemos el primer hijo con etiqueta p
+        let parrafo1 = document.querySelectorAll("body>p:first-child")[0];
+        //cogemos el elemento body
+        let cajon = document.getElementsByTagName('body')[0];
+        //cambiamos el estilo de la frase que mostramos a negrita
+        parrafoNuevo.style.fontWeight="bold";
+        //insertamos la frase por delante del primer hijo P
+        cajon.insertBefore(parrafoNuevo,parrafo1);
+
+
+    </script>
+</body>
+</html>

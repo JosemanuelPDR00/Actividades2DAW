@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica 7 EVA2</title>
+</head>
+<body>
+    <ol id="principal">
+        <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi quam reprehenderit exercitationem vitae! Illo fuga minima placeat porro doloremque, consectetur culpa quas consequuntur, maiores non, dolorem praesentium temporibus magni atque.</li>
+        <li>Laboriosam velit corporis asperiores beatae assumenda. Nesciunt cum blanditiis, minima quia animi in, commodi cumque sunt magni ex earum expedita repellendus. Hic ipsam reiciendis, totam cum est accusamus odio impedit?</li>
+        <li>Facere odio libero dolore amet a tenetur veritatis quos aperiam officia ipsum, autem itaque ipsam incidunt vero voluptate dolorem consequuntur cupiditate nisi. Quia quasi dolorem eius explicabo minus praesentium voluptas?</li>
+        <li>Accusamus voluptates itaque nisi adipisci libero quam officiis veritatis possimus illum, odit ducimus at eum quo eos earum saepe doloribus? Deserunt expedita accusamus quibusdam ipsam voluptate officia explicabo nam eveniet!</li>
+        <li>Debitis aliquid facilis, impedit aperiam suscipit architecto ad quam repellat accusamus et eligendi voluptatem libero praesentium, tenetur error, illo atque quaerat! Ad tempore nesciunt perspiciatis placeat vitae non tenetur est!</li>
+        <li>Facilis eius rerum iusto recusandae repudiandae neque et dolore molestias impedit, debitis tenetur reiciendis nemo nihil sapiente architecto cum necessitatibus nulla culpa odit. Esse molestias aperiam quaerat, ducimus odit eveniet!</li>
+        <li>Eveniet id distinctio sunt laborum aperiam fuga voluptas dignissimos ex ducimus voluptatem rerum accusantium facilis excepturi dolores tempore necessitatibus, magnam quisquam similique perspiciatis adipisci natus eligendi facere. Odio, aperiam ipsam.</li>
+        <li>Voluptatibus accusantium animi iusto nesciunt harum adipisci dignissimos! Minima ratione, nihil laborum quibusdam nulla commodi sint soluta maiores odio ad vero nesciunt nemo, error veritatis reprehenderit exercitationem ipsa ex voluptatum.</li>
+        <li>Asperiores corporis culpa minima sit vel dolores expedita tenetur officiis debitis esse! Magni soluta odio, modi a doloribus recusandae cum? Ex, perferendis esse. Iusto facilis reprehenderit quidem totam, aliquid deleniti!</li>
+    </ol>
+
+    <script>
+
+        //creo esta variable que va a ser la que indique la salida del bucle
+        var salida=true;
+        while(salida){
+            //una vez dentro del bucle, primero pedimos que inserte un texto y lo almacenamos en la variable
+            var texto = prompt('INTRODUCE UN TEXTO.');
+
+            //comprobamos que no haya dejado la variable vacia
+            if(texto==""){
+                alert('No puedes dejar en blanco el texto.');
+
+            //si el usuario cancela sale del bucle
+            }else if(texto==null){
+                salida=false;
+
+            //en caso de introducir cualquier cadena de texto, salimos del bucle y lo damos por bueno
+            }else{
+                salida=false;
+            }
+        }
+
+        //usamos la variable de nuevo para hacer la siguiente comprobacion
+        salida=true;
+        while(salida){
+
+            //pedimos al usuario, la posicion en la que quiere posicionar su texto entre los 9 que hay ya escritos
+            var posicion = prompt('INTRODUCE LA POSICION EN LA QUE APARECERÁ TU TEXTO.');
+
+            //si el campo lo introduce vacio, nos muestra un mensaje de error
+            if(posicion==""){
+                alert('No puedes dejar en blanco este campo.');
+
+            //si el usuario cancela, le sacamos del bucle
+            }else if(posicion==null){
+                salida=false;
+
+            //si lo que ha introducido no es un numero, nos mostrará un error
+            }else if(isNaN(posicion)){
+                alert('Introduce un valor numerico.');
+
+            //si el numero introducido es menos que 1 o mayor a 10, mostramos mensaje de aviso
+            }else if(posicion<1||posicion>10){
+                alert('El numero introducido tiene que estar en el rango 1-10.');
+
+            //si introduce un numero entre 1-10, lo almacenamos y salimos del bucle
+            }else{
+                salida=false;
+            }
+        }
+
+        //creamos la variable capa, que la identificamos por su id, en este caso es la etiqueta padre
+        //de donde tenemos los parrafos
+        let capa = document.getElementById('principal');
+
+        //creamos la variable nuevoParrafo, que será de etiqueta li
+        let nuevoParrafo=document.createElement('li');
+
+        //a la variable creada anteriormente, añadimos el valor del texto que el usuario introdujo
+        nuevoParrafo.textContent = texto;
+
+        //creamos la variable parrafo que será la que tengamos como referencia por su posicion, a continuacion
+        let parrafo = document.querySelectorAll('#principal li:nth-of-type('+posicion+')')[0];
+
+        //insertamos el parrado introducido por el usuario por detras del parrafo anterior que obtubimos su posicion
+        capa.insertBefore(nuevoParrafo,parrafo);
+    </script>
+</body>
+</html>

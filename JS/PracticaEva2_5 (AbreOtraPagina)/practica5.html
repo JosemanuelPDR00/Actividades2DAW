@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica 5</title>
+</head>
+<body>
+    <button onclick="nosVamos()">¡¡NOS VAMOS!!</button>
+    <script>
+
+        //funcion que llamaremos desde el boton, la cual nos redirige hasta google
+        function nosVamos(){
+            location.href = "https://www.google.com";
+        }
+        //con esta funcion anonima, nos va a redirigir a duckduckgo.es, si no se ha
+        //pulsado el boton en 5 seg.
+        setTimeout(function(){
+            location.href = "https://duckduckgo.com/";
+        },5000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica 1</title>
+</head>
+<body>
+    <script>
+        function Punto(x,y){
+            this.x=x;
+            this.y=y;
+        
+
+            this.instancia=function(){
+                if(isNaN(x)){   //Si lo introducido en x o y no es un numero
+                    this.x=0;        //iniciamos el valor a 0.
+                }else{
+                    this.x=x;
+                }
+            
+                if(isNaN(y)){
+                    this.y=0;
+                }else{
+                    this.y=y;
+                }
+            }
+            
+            this.cambiar=function(){
+                if(isNaN(x)){   //Basicamente hacemos lo anterior ya que
+                    this.x=0;        //sobreescribimos la variable y se cambia su valor
+                }else{
+                    this.x=x;
+                }
+
+                if(isNaN(y)){
+                    this.y=0;
+                }else{
+                    this.y=y;
+                }
+            }
+
+                this.copia=function(){//copiamos el valor de las variables en el nuevo punto
+                    nuevoPunto = new Punto(this.x, this.y);
+                    return nuevoPunto;
+                }
+
+                this.igual=function(Punto){
+                    if(Punto.x==this.x){//si x es igual
+                        if(Punto.y==this.y){//y la Y tambien
+                            return true;//devolvemos true para saber que son iguales
+                        }else{          //una vaz q alguna de las dos variables sea 
+                            return false;//distinta devolveremos false.
+                        }
+                    }else{
+                        return false;
+                    }
+                }
+
+                this.suma=function(Punto){                   //añadimos el valor de objeto p a dos nuevas variables,
+                    apartadoX = Punto.x + this.x;   //sumamos las variables introducidas con las del propio objeto
+                    apartadoY = Punto.y + this.y;   //luego sacamos el valor de la variable
+                    suma = new Punto(apartadoX, apartadoY);
+                    return suma;
+                }
+
+                this.toString=function(){                        //devolvemos las variables x, y
+                    return this.x +", "+ this.y;
+                }
+            
+        }//class p
+
+        //instanciamos el objeto punto
+        punto1 = new Punto(3,1);
+        //punto a igualar
+        puntoIgual = new Punto(6,6);
+        //punto a diferenciar
+        puntoDiferente = new Punto(4,7);
+        //copiamos un punto
+        puntoCopiado = punto1.copia();
+
+        //mostramos los diferentes puntos a comparar
+        console.log(punto1.toString());
+        console.log(puntoCopiado.toString());
+
+        //cambio de coordenadas del punto
+        punto1.cambiar(1,1);
+        console.log(punto1.toString());
+
+        //COmprobamos los puntos si son iguales
+        console.log(punto1.igual(puntoIgual));
+        
+        //suma de puntos
+        sumarPuntos = punto1.suma(puntoIgual);
+        console.log(sumarPuntos.toString());
+
+    </script>
+</body>
+</html>
