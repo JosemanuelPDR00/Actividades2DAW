@@ -1,0 +1,191 @@
+*{
+    border: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/*IMAGEN DEL FONDO DE LA HAMBURGUESA*/
+html{
+    background:url(./img/burger.jpg);
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+    background-attachment: fixed;
+    position: relative;
+}
+
+/*---------------------------------------------------------*/
+
+/*CONTENEDOR QUE TIENE EL TITULO Y TEXTO EN SU INTERIOR*/
+#contenedorTexto{
+    position: absolute;
+    top: 15%;
+    right: 4%;
+    text-align: center;
+    width: 60%;
+    height: 60%;
+}
+
+#titulo{
+    font-size: 4em;
+    color: whitesmoke;
+    font-family: 'Lacquer', cursive;
+    margin-top: 15%;
+}
+
+#parrafo{
+    font-family: 'Exo', sans-serif;
+    background-color: gray;
+    opacity: 80%;
+    margin-top: 10%;
+    border-radius: 10px;
+    text-align: justify;
+    font-size: 1.5em;
+    padding:15px 10px 15px 10px;
+}
+
+/*------------------------------------------------------------*/
+
+/*CAPA SUPERIOR DEL MENU HAMBURGUESA,
+EL CHECKBOX VA POR ENCIMA DEL CONTENEDOR Y LAS LINEAS.*/
+#invisibleCheckbox{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    margin-top: 2%;
+    left: 2%;
+    opacity: 0%;
+    z-index: 15;
+    cursor: pointer;
+}
+
+/*CAPA INTERMEDIA DEL MENU HAMBURGUESA,
+LAS LINEAS ESTAN VISIBLE POR ENCIMA DEL CONTENEDOR.*/
+
+/*Esta es la linea intermedia*/
+.lineaHamburguesa{
+    background-color: rgb(255, 40, 0);
+    display: inline-block;
+    height: 5px;
+    left: 10px;
+    margin-top: -1px;
+    position: absolute;
+    top: 50%;
+    transition: .4s;
+    width: 40px;
+    border-radius: 2px;
+}
+
+/*Esta es la linea superior*/
+.lineaHamburguesa:first-child{
+    background-color: rgb(255, 40, 0);
+    display: inline-block;
+    height: 5px;
+    left: 10px;
+    margin-top: -1px;
+    position: absolute;
+    top: 25%;
+    transition: .4s;
+    width: 40px;
+    border-radius: 2px;
+}
+
+/*Esta es la linea inferior*/
+.lineaHamburguesa:last-child{
+    background-color: rgb(255, 40, 0);
+    display: inline-block;
+    height: 5px;
+    left: 10px;
+    margin-top: -1px;
+    position: absolute;
+    top: 75%;
+    transition: .4s;
+    width: 40px;
+    border-radius: 2px;
+}
+
+/*CAPA INFERIOR, ES EL CONTENEDOR DEL MENU HAMBURGUESA,
+SIMPLEMENTE ESTA DE FONDO.*/
+#contenedorHamburguesa{
+    display: inline-block;
+    position: absolute;
+    left: 2%;
+    /*background-color: rgb(255, 104, 49);*/
+    width: 60px;
+    height: 60px;
+    margin-top: 2%;
+    z-index: 5;
+}
+
+/*--------------------------------------------------------------*/
+
+/*Cajon verde que lleva las secciones del menú*/
+#barraDesplegable{
+    position: absolute;
+    top: 0;
+    left: -20vw;
+    background-color: rgb(140, 200, 157);
+    height: 100vh;
+    width: 20vw;
+    text-align: left;
+    padding-top: 7%;
+}
+
+/*Secciones del menu hamburguesa*/
+.apartados{
+    margin-left: 10%;
+    margin-top: 1vh;
+    list-style: none;
+    font-family: 'Exo', sans-serif;
+    font-size: 1.5em;
+}
+
+/*--------------------------------------------------------------------*/
+
+/*Efecto de las secciones del menú*/
+li:hover{
+    text-decoration: underline;
+    font-weight: bold;
+    color: rgb(0, 85, 0);
+}
+
+/*--------------------------------------------------------------*/
+
+/*Transicion de salida del menú hamburguesa*/
+#invisibleCheckbox:checked~#barraDesplegable{
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition-duration: 0.5s;
+    transition-property: all;
+}
+
+/*Transicion de recogida del menú hamburguesa*/
+#invisibleCheckbox:not(:checked)~#barraDesplegable{
+    position: absolute;
+    top: 0;
+    left: -20vw;
+    transition-duration: 0.5s;
+    transition-property: all;
+}
+
+/*Transicion de rotacion de la barra superior del menú*/
+#invisibleCheckbox:checked~#contenedorHamburguesa>#linea1{
+    background-color: rgb(0, 85, 0);
+    transform: rotateZ(50deg);
+    transform-origin: left;
+}
+
+/*Transicion de ocultacion de la segunda barra del menú*/
+#invisibleCheckbox:checked~#contenedorHamburguesa>#linea2{
+    background-color: rgb(0, 85, 0);
+    transform: rotateY(90deg);
+    transform-origin: left;
+    opacity: 10;
+}
+
+/*Transicion de rotacion de la barra inferior del menú*/
+#invisibleCheckbox:checked~#contenedorHamburguesa>#linea3{
+    background-color: rgb(0, 85, 0);
+    transform: rotateZ(-50deg);
+    transform-origin: left;
+}

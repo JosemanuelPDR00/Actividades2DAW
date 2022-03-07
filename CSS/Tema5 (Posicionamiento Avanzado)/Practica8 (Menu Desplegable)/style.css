@@ -1,0 +1,201 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*--------------------------------------------------------------------------------------------*/
+
+/*ASI QUITAMOS LA DECORACION DE LOS ENLACES*/
+a{
+    text-decoration: none;
+}
+/*ASI QUITAMOS LA DECORACION DE LAS LISTAS*/
+li{
+    list-style-type: none;
+}
+
+/*-----------------------------------------------------------------------------------------------*/
+
+/*BARRA COMPLETA DE NAVEGACION*/
+#menu{
+    width: 100vw;
+    height: 60px;
+    background-color: crimson;
+    min-width: 1200px;
+}
+nav{
+    z-index: 22;
+}
+/*CADA APARTADO DE LA BARRA*/
+.nav{
+    width: 200px;
+    height: 60px;
+    float: left;
+    padding-top: 15px;
+}
+
+/*TEXTO DE CADA APARTADO DE LA BARRA*/
+.texto0{
+    font-family: 'Karla', sans-serif;
+    display: block;
+    color: whitesmoke;
+    font-size: 1.6em;
+    margin:auto;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+/*TRANSICION PARA CUANDO DESPLEGUEMOS DEL NAV, LE CAMBIA EL FONDO*/
+.nav:hover{
+    background-color: #2E0404;
+    transition: background-color 0.5s ease-in-out;
+}
+
+/*TRANSICION PARA DESPLEGAR LA BARRA DE FORMA VERTICAL*/
+.nav:hover .salto1{
+    display: block;
+    width: 200px;
+    height: 60px;
+}
+
+
+/*---------------------------------------------------------------------------------*/
+
+
+/*PRIMERA LISTA DESPLEGABLE*/
+.salto1{
+    display: none;
+    z-index: 5;
+    background-color: crimson;
+}
+
+.texto1{
+    font-family: 'Karla', sans-serif;
+    display: block;
+    color: whitesmoke;
+    font-size: 1.6em;
+    margin:auto;
+    text-align: center;
+    padding-top: 16px;
+    margin-bottom: 16px;
+}
+
+.salto1:hover{
+    background-color: #2E0404;
+    transition: background-color 0.5s ease-in-out;
+}
+
+.salto1:hover .salto2{
+    display: block;
+    width: 200px;
+    height: 60px;
+}
+
+/*---------------------------------------------------------------------------------------*/
+
+.salto2{
+    display: none;
+    width: 200px;
+    height: 60px;
+    z-index: 6;
+    background-color: crimson;
+    position:relative;
+    left: 200px;
+    top: -61px;
+}
+
+.texto2{
+    font-family: 'Karla', sans-serif;
+    display: block;
+    color: whitesmoke;
+    font-size: 1.6em;
+    margin:auto;
+    text-align: center;
+    padding-top: 16px;
+    margin-bottom: 16px;
+}
+
+.salto2:hover{
+    background-color: #2E0404;
+    transition: background-color 0.5s ease-in-out;
+}
+
+.salto2:hover .salto3{
+    display: block;
+    width: 200px;
+    height: 60px;
+}
+
+/*------------------------------------------------------------------------------*/
+
+.salto3{
+    display: none;
+    width: 200px;
+    height: 60px;
+    z-index: 6;
+    background-color: crimson;
+    position:relative;
+    left: 200px;
+    top:-61px;
+}
+
+.texto3{
+    font-family: 'Karla', sans-serif;
+    display: block;
+    color: whitesmoke;
+    font-size: 1.6em;
+    margin:auto;
+    text-align: center;
+    padding-top: 16px;
+    margin-bottom: 16px;
+}
+
+.salto3:hover{
+    background-color: #2E0404;
+    transition: background-color 0.5s ease-in-out;
+}
+
+
+/*----------------------------------------------------------------------------------------------*/
+
+
+/*Parte Inferior*/
+body{
+    background-image: url(./imagen/fondo.png);
+    background-size: cover;
+    background-attachment: fixed;
+    position:relative;
+}
+
+main{
+    height:calc(100vh-60px);
+}
+
+/*Titulo*/
+#titulo{
+    width: 80vw;
+    height: 20vh;
+    color:whitesmoke;
+    font-size: 6vw;
+    position:absolute;
+    top:30vh;
+    left: 10vw;
+    text-align: center;
+    font-family: 'Calistoga', cursive;
+    z-index: -1;
+}
+
+/*Texto*/
+#texto{
+    color: whitesmoke;
+    width: 85vw;
+    height: 15vh;
+    left: 7.5vw;
+    position: absolute;
+    top:50vh;
+    font-family: 'Karla', sans-serif;
+    font-size: 2.3vw;
+    text-align: center;
+    z-index: -1;
+}
