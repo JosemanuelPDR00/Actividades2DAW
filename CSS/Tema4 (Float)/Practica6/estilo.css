@@ -1,0 +1,90 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-family: Arial;
+}
+
+.titular{
+    background-color: orange;
+    float: left;
+    height: 10vh;
+    width: 100vw;
+    text-align: center;
+    padding-top: 2vh;
+}
+
+.central{
+    background-color: mediumslateblue;
+    float: left;
+    height: 35vh;
+    width: 100vw;
+}
+
+.caja{
+    background-color: yellowgreen;
+    height: 13vh;
+    margin-top: 3vh;
+    width: 22.5vw;
+    float: left;
+    margin-left: 2vw;
+    border: 1px solid black;
+    padding-top: 1vh;
+    padding-left: 1vw;
+    overflow: hidden;
+}
+
+.contenedor{
+    background-color: teal;
+    float: left;
+    height: 55vh;
+    width: 100vw;
+}
+
+.c1{
+    background-color: violet;
+    border: 1px white solid;
+    float: right;
+    width: 32%;
+    margin: 1% 1% 1% 1%;
+    height: 75%;
+    padding: 1em;
+    overflow: hidden;
+}
+
+.c2{
+    background-color: darksalmon;
+    border: 1px white solid;
+    float: left;
+    width: 65%;
+    margin: 1% 0% 1% 1%;
+    height: 30%;
+    padding: 1em;
+    overflow: hidden;
+}
+
+.c3{
+    background-color: indianred;
+    border: 1px white solid;
+    float: left;
+    margin: 0% 0% 1% 1%;
+    height: 40%;
+    width: 65%;
+    padding: 1em;
+    overflow: hidden;
+}
+
+.c4{
+    background-color: darkgoldenrod;
+    border: 1px white solid;
+    clear:both;
+    text-align: center;
+    padding-top: 2vh;
+    margin: auto;
+    width: 80vw;
+    height: 15%;
+    overflow: hidden;
+}
