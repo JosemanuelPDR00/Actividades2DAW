@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejercicio 3</title>
+</head>
+<body>
+    <script>
+        //CREAMOS LA FUNCION PASANDO EL PARAMETRO DEL ARRRAY
+        function ordenaArray(array){
+            //CREO UNA VARIABLE QUE VAYA A ALMACENAR EL ARRAY ORDENADO.
+            var arrayOrdenado = array.sort();
+            //DEVOLVEMOS EL ARRAY ORDENADO.
+            return arrayOrdenado;
+        }
+
+        //INICIAMOS LA VARIABLE PARA PODER SALIR DEL BUCLE WHILE
+        var cancelar = true;
+        do{
+            //INICIALIZAMOS EL ARRAY INTRODUCIDO
+            var arrayIntro=[];
+            //INICIALIZAMOS LA CADENA QUE INTRODUCE LOS VALORES EN EL ARRAY PROXIMAMENTE
+            var cad;
+
+            //SE REPITE 50 VECES O SEA LA VARIABLE CANCELAR TRUE
+            for(let i=0;i<50&&cancelar;i++){
+                //INTRODUCIMOS DATOS EN LA CADENA
+                cad = prompt("Introduce palabras en el array");
+                //SI CADENA ES TRUE Y NO NULL
+                if(cad){
+                    //HACEMOS ESTO
+                    arrayIntro[i]=cad;
+                }else{
+                    //EN CASO CONTRARIO SALIMOS
+                    cancelar=false;
+                }
+
+            }
+            //MOSTRAMOS CON ESTO EL ARRAY INTROCUCIDO.
+            //console.log(arrayIntro);
+
+            //COMPROBAMOS COMO ESTA LA VARIABLE CANCELAR
+            //console.log(cancelar);
+        }while(cancelar);
+
+        //LLAMADA A LA FUNCION
+        console.log(ordenaArray(arrayIntro));
+        
+    </script>
+</body>
+</html>

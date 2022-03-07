@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejercicio 2</title>
+</head>
+<body>
+    <script>
+        //CREAMOS LA FUNCION PASANDOLE EL PARAMETRO NUMERICO
+        function esPrimo(numIntro){
+            //CONDICION PARA COMPROBAR SI ES PRIMO, YA QUE ES DIVISIBLE ENTRE
+            //LOS MINIMOS COMUNES MULTIPLOS DE CUALQUIER NUMERO
+            if(numIntro%2==0||numIntro%3==0||numIntro%5==0||numIntro==1||numIntro==2||numIntro==3||numIntro==5){
+                //SI ES CORRECTA LA CONDICION NO ES PRIMO YA QUE ES DIVISIBLE ENTRE OTROS NUMEROS
+                var x = "El numero no es primo";
+            }else{
+                //EN CASO CONTRARIO EL NUMERO SERÁ PRIMO
+                var x = "El numero es primo.";
+            }
+            //MOSTRAMOS EL RESULTADO QUE HAYAMOS OBTENIDO.   
+            console.log(x);
+        }
+        
+        //CREAMOS UNA VARIABLE LA CUAL ES LA QUE PASAREMOS A LA FUNCION
+        //HACIENDO QUE EL USUARIO SEA EL QUE INTRODUZCA EL VALOR.
+        var numIntro = parseInt(prompt("Introduce un numero para comprobar si es primo."));
+
+        //LLAMADA A LA FUNCION.
+        console.log(esPrimo(numIntro));
+    </script>
+</body>
+</html>

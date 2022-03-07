@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="*-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscaminas con Programacion Orientada a objetos.</title>
+    <link rel="stylesheet" href="./BuscaminasPOO.css">
+</head>
+<body>
+    <h1>Buscaminas</h1>
+    <script>
+
+        //Objeto que contendra todo los datos del codigo.
+        var buscaminas= new juego();
+
+        //Funcion que nos permitirá insertar los datos del juego.
+        buscaminas.insertarDatos();
+
+        //Esta función pide datos como las filas, columnas y minas al jugar
+        //Realizamos las comprobaciones para que el número
+        //de minas no supere la multiplicacion de filas y columnas entre 2
+        function juego(){
+
+            this.insertarDatos = function(){
+
+                
+                    //Variable booleana, para salir del proximo bucle
+                    var salidaFila=true;
+
+                    /*Bucle que nos permite retornar una y otra vez la operacion
+                    de inserccion de los datos de la fila*/
+                    while(salidaFila){
+
+                        //Pedimos el numero de filas
+                        var fila = prompt("Numero de filas");
+
+                        //Expresión regular para introducir solamente numeros validos
+                        //Primero nos deja poner el 1 junto seguido de otro numero obligatoriamente para q sea mayor de 2
+                        //Segundo ponemos el numero 2 juntoseguido de otro numero obligatoriamente para q sea mayor de 2
+                        //Nos deja libertad de poner un digito de 3 en adelante las veces que queramos, en caso de querer poner
+                        //numeros inferiores, podriamos ponerlo en la segunda posicion como minimo.
+                        /*----------------------Esta expresion la uso dos veces-------------------------------------------------*/
+                        expRegFila = /[1][0-9]+|[2][0-9]+|[3-9]+[0-9]*/;
+
+                        //Condicion para comprobar la expresion regular
+                        if(expRegFila.test(fila)){
+
+                            /*Si esta variable se cumple saldriamos del bucle, por tanto
+                            ya se ha conseguido que se introduzca un dato correcto*/
+                            salidaFila=false;
+
+                            //Si no ...
+                        }else{
+
+                            /*Mostramos mensaje de error, y volvemos a repetir el bucle
+                            hasta que los datos introducidos sean correctos*/
+                            alert("Error, necesitas mas de 2 filas.");
+                        }
+                    }
+        /*---------------------------------------------------------------------------------------------------------*/
+
+                        //Variable booleana, para salir del proximo bucle
+                        var salidaColumna = true;
+
+                        /*Bucle que nos permite retornar una y otra vez la operacion
+                        de inserccion de los datos de la fila*/
+                        while(salidaColumna){
+
+                            //Pedimos el numero de columnas
+                            var columna = prompt("Numero de columnas");
+
+                            //Expresión regular para introducir solamente numeros validos
+                            //Primero nos deja poner el 1 junto seguido de otro numero obligatoriamente para q sea mayor de 2
+                            //Segundo ponemos el numero 2 juntoseguido de otro numero obligatoriamente para q sea mayor de 2
+                            //Nos deja libertad de poner un digito de 3 en adelante las veces que queramos, en caso de querer poner
+                            //numeros inferiores, podriamos ponerlo en la segunda posicion como minimo.
+                            /*----------------------Esta expresion la uso dos veces-------------------------------------------------*/
+                            expRegColumna= /[1][0-9]+|[2][0-9]+|[3-9]+[0-9]*/;
+
+                            //Condicion para comprobar la expresion regular
+                            if(expRegColumna.test(columna)){
+
+                                /*Si esta variable se cumple saldriamos del bucle, por tanto
+                                ya se ha conseguido que se introduzca un dato correcto*/
+                                salidaColumna=false;
+
+                                // Si no ...
+                            }else{
+
+                                /*Mostramos mensaje de error, y volvemos a repetir el bucle
+                                hasta que los datos introducidos sean correctos*/
+                                alert("Error, necesitas mas de 2 columnas.");
+                            }
+                        }
+
+        /*-------------------------------------------------------------------------------------------------------------------------*/
+
+                    //Variable booleana, para salir del proximo bucle
+                    var salidaMina=true;
+                    
+                    /*Bucle que nos permite retornar una y otra vez la operacion
+                    de inserccion de los datos de la fila*/
+                    while(salidaMina){
+
+                        //Pedimos el numero de minas
+                        var mina= prompt("Numero de minas");
+
+                        //Expresión regular para introducir solamente numeros
+                        expRegMinas=/[0-9]+/;
+
+                        //Condicion para comprobar la expresion regular
+                        if(expRegMinas.test(mina)){
+                            /*Comprobamos que el numero de minas no sea mayor que
+                            la multiplicacion de minas por columnas entre dos*/
+                            if(mina<(fila*columna)/2){
+                                salidaMina=false;
+                            }else{
+                                /*Mostramos mensaje de error, y volvemos a repetir el bucle
+                                hasta que los datos introducidos sean correctos*/
+                                alert("El numero de minas tiene que se menor que "+ (fila*columna)/2 +" , introduce los datos de nuevo.");
+                            }
+                        // Si no ...
+                        }else{
+                            /*Mostramos mensaje de error, y volvemos a repetir el bucle
+                            hasta que los datos introducidos sean correctos*/
+                            alert("Debes de introducir un numero obligatoriamente.");
+                        }
+                        
+                    }
+
+                //Pedimos los datos de las funcion anteriores y dibujamos el juego
+                Buscamina1 = new funcionamiento();
+
+                //Creamos la tabla con los datos introduccidos anteriormente
+                Buscamina1.crearTablero(fila, columna, mina);
+            }
+        }
+
+        /*---------------------------------------------------------------------------------------------------------------------------------*/
+
+        //Creamos las filas, columnas y minas del tablero
+        function funcionamiento(fila, columna, mina){
+
+            //Igualamos las variables locales a las globales
+            this.fila= fila;
+            this.columna= columna;
+            this.mina= mina;
+
+            //Función que crea dicha tabla, a la función le pasamos por parámetro las filas, columnas y minas que el jugador a introdicido antes.
+            this.crearTablero= function(fila, columna, mina){
+
+                //Asingmanos las minas aleatorias
+                var minas= this.celdaAleatoria(fila, columna, mina);
+
+                //Iniciamos el tablero
+                document.write("<table>");
+                
+                //Pintamos las lineas con el bucle, para igualar el numero introducido 
+                for(i = 0; i < fila; i++){
+
+                    //Pintamos las filas
+                    document.write("<tr>");
+                    
+                    //Pintamos las columnas, igualandolas al numero introducido
+                    for (j=0; j<columna; j++){
+
+                        //Si en la celda hay una mina
+                        if (minas[i][j]=="*"){
+
+                            //Pintamos la mina
+                            document.write("<td>*</td>");
+                        
+                        //Si no ..
+                        }else{
+
+                            //Pintamos el numero de minas de su alrededor con la funcion cuentaMinas
+                            document.write(`<td>${this.cuentaMinas(i, j, minas, fila, columna)}</td>`);
+                        }
+                    }
+                    //Terminamos de pintar las filas
+                    document.write("</tr>");
+                }
+                //Terminamos de pintar la tabla
+                document.write("</table>");
+
+            }
+
+            //CeldaAleatoria asigna las minas de forma aleatoria según los datos que le pasamos, fila columna y mina.
+            this.celdaAleatoria = function(fila, columna, mina) {
+
+                //Creamos la variable, para que almacene un array a su vez
+                //para conseguir un array bidimensional.
+                const celdaAleatoria = new Array(this.fila);
+
+                //Con estas dos variables, lo que hacemos es crear un array, 
+                //para guardar los valores dentro que proximamente utilizaremos
+                const alFila = new Array();
+                const alCol = new Array();
+                //Esta variable va a servir como contador de minas cercanas
+                //y como numero de la casilla.
+                numeroMinas = 0;
+
+                //Creamos un array de columna en cada fila
+                for (i=0; i<fila; i++) {
+                    celdaAleatoria[i] = new Array(columna);
+                }
+
+                //Condicion para ir insertando minas hasta que sea igual al numero de
+                //minas introducidas por el usuario.
+                while (numeroMinas < mina) {
+
+                    //Numero de fila y columna aleatoria
+                    numAlFila = parseInt(Math.random() * fila);
+                    numAlCol = parseInt(Math.random() * columna);
+
+                    //Recorremos las filas
+                    for (j = 0; j < fila; j++) {
+                        //Recorremos las columnas
+                        for (k = 0; k < columna; k++) {
+                            //Si el numero de fila es igual, al recorrido num aleatorio de fila
+                            if (j == numAlFila) {
+                                //Y el numero de columna es igual al num aleatorio de columna
+                                if (k == numAlCol) {
+                                    //Si la celda concreta que hayamos recorrido es igual a la posicion
+                                    //de la fila y de la columna, comprobamos si en la casilla hay una bomba, para escribirla
+                                    //en el caso de que ya este la bomba, no se escribe ya que perderiamos una bomba al sobreescribirla
+                                    if (celdaAleatoria[j][k] != "*") {
+                                        //Pintamos la bomba
+                                        celdaAleatoria[j][k] = "*";
+                                        //Introducimos una mina al contador
+                                        numeroMinas++;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                }
+
+                //Recorremos las filas
+                for (j=0; j<fila; j++) {
+                    //Recorremos cada columna
+                    for (k = 0; k < columna; k++) {
+                        //Si en la celda no hay una bomba introducimos un 0
+                        if (celdaAleatoria[j][k] != "*") {
+                            celdaAleatoria[j][k] = 0;
+                        }
+                    }
+                }
+
+            //Retornamos la celda aleatoria
+            return celdaAleatoria;
+
+            }
+
+            //Esta funcion cuenta el numero de minas proximas a la celda
+            //y le asigna el numero de minas
+            this.cuentaMinas = function(i, j, minas, fila, columna){
+
+                //Variable que sirve de contador con las minas cercanas
+                minaCerca= 0;
+
+                //Esta condicion empieza en mayor a 0, ya que si no peta al poder ser
+                //la primera casilla y quisiera buscar algo en -1
+                if(i>0) {
+                    //Comprobamos la casilla de la izquierda si tiene mina
+                    if(minas[i-1][j]=="*"){
+                        //Si tiene mina añadimos una al contador
+                        minaCerca++;
+                    }
+                    if(j>0){
+                        //Comprobamos la casilla de arriba a la izquierda si tiene mina
+                        if(minas[i-1][j-1]=="*"){
+                            //Si tiene mina añadimos una al contador
+                            minaCerca++;
+                        }
+                    }
+                    if(j<columna-1){
+                        //Comprobamos la casilla de abajo a la izquierda si tiene mina
+                        if(minas[i-1][j+1]=="*"){
+                            //Si tiene mina añadimos una al contador
+                            minaCerca++;
+                        }
+                    }
+                }
+
+                if(i<fila-1){
+                    //Comprobamos si la casilla de la derecha tiene mina
+                    if(minas[i+1][j]=="*"){
+                        //Si tiene mina añadimos una al contador
+                        minaCerca++;
+                    }
+                    if(j<columna-1){
+                        //Comprobamos la casilla de la derecha abajo si tiene mina
+                        if(minas[i+1][j+1]=="*"){
+                            //Si tiene mina añadimos una al contador
+                            minaCerca++;
+                        }
+                    }
+                    if(j>0){
+                        //Comprobamos la casilla de la derecha arriba si tiene minas
+                        if(minas[i+1][j-1]=="*"){
+                            //Si tiene mina añadimos una al contador
+                            minaCerca++;
+                        }
+                    }
+                }
+
+                if(j>0){
+                    //COmprobamos la casilla de arriba si tiene mina
+                    if(minas[i][j-1]=="*"){
+                        //Si tiene mina añadimos una al contador
+                        minaCerca++;
+                    }
+                }
+
+                if(j<columna-1){
+                    //Comprobamos si la celda de abajo tiene mina
+                    if(minas[i][j+1]=="*"){
+                        //Si tiene mina añadimos una al contador
+                        minaCerca++;
+                    }
+                }
+
+                //Devolvemos el numero de minas cercanas.
+                return minaCerca;
+            }
+        }
+
+    </script>
+</body>
+</html>

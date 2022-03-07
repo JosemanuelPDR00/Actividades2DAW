@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #333030;
+    background-attachment: fixed;
+    background-size: cover;
+    text-align: center;
+    font-size: 2em;
+}
+
+h1{
+    font-family: Verdana, Geneva, Tahoma, sans-serif ;
+    color: brown;
+    font-size: 3em;
+    margin-top: 5%;
+    margin-bottom: 2%;
+    text-shadow: 0px 0px 5px gold;
+}
+
+table{
+    margin: auto;
+}
+
+td{
+    width: 60px;
+    height: 60px;
+    border: 3px solid brown;
+    border-radius: 10px;
+    text-shadow: 0px 0px 5px gold;
+}
