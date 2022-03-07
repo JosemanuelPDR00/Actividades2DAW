@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica 14</title>
+</head>
+<body>
+    <script>
+        //var nombre = prompt("USUARIO");
+        var nombre = "";
+        var correcto = false;
+        while(correcto == false){
+            nombre = prompt("USUARIO");
+            if(nombre.match(/(?=.*[a-z])(?=.*[0-9]).+/)){
+                alert("Usuario correcto");
+                correcto = true;
+            }else{
+                alert("Usuario incorrecto");
+            }
+        }
+        
+        var contra="";
+        
+        correcto=false;
+        while(correcto==false){
+            contra=prompt("Introduce la contraseña");
+            if(contra.match(/(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\W).+/)){
+                alert("Contraseña correcta");
+                correcto = true;
+            }else{
+                alert("Contraseña incorrecta");
+            }
+
+        }
+    </script>
+</body>
+</html>

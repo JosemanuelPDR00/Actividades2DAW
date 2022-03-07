@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica 12</title>
+</head>
+<body>
+    <script>
+        var dni;
+        var numero
+        var letra
+        var letr
+        var expresion_regular_dni = /^\d{8}[a-zA-Z]$/ ;
+
+        
+        dni=prompt("Introduce el numero de tu DNI");
+ 
+        if(expresion_regular_dni.test (dni) == true){
+            numero = dni.substr(0,dni.length-1);
+            letr = dni.substr(dni.length-1,1);
+            numero = numero % 23;
+            letra='TRWAGMYFPDXBNJZSQVHLCKET';
+            letra=letra.substring(numero,numero+1);
+            if (letra!=letr.toUpperCase()) {
+                alert('Dni erroneo, la letra del NIF no se corresponde');
+            }else{
+                alert('Dni correcto');
+            }
+        }else{
+            alert('Dni erroneo, formato no válido');
+        }
+
+    </script>
+</body>
+</html>

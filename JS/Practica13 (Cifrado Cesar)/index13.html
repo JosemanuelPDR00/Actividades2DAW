@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica 13</title>
+</head>
+<body>
+    <script>
+
+        var claveCifrado = prompt("Introduce un numero clave para cifrar.");
+
+        if (claveCifrado==null) {
+            alert("No se ha introducido clave para cifrar.");
+        }
+
+        do{
+            if(claveCifrado<1 || claveCifrado>100){
+                var claveCifrado = parseInt(prompt("Introduce un numero clave para cifrar."));
+                alert("Numero para cifrar introducido");
+                var clave=true;
+            }else{
+                var clave=false;
+            }
+        }while(clave);
+
+        claveCifrado = parseInt(claveCifrado);
+        
+        var textoIntro = prompt("Introduce un texto a cifrar.");
+
+        do{
+            if(textoIntro==0){
+                var textoIntro = prompt("Introduce un texto a cifrar.");
+                var clave2 = true;
+            }else{
+                var clave2 = false;
+            }
+        }while(clave2);
+
+        var array=[];
+        var almacen="";
+
+        for(let i=0; i<textoIntro.length; i++){
+            array[i]=textoIntro.charCodeAt(i)+claveCifrado;
+            almacen += String.fromCharCode(array[i]);
+        }
+
+        alert(almacen);
+
+
+    </script>
+</body>
+</html>

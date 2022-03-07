@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cifrado Complejo</title>
+</head>
+<body>
+    <script>
+        //variable para salir una vez tengamos introducido un dato correcto
+        var salida=true;
+
+        //condiciones de que el texto sea adecuado
+        while(salida){
+            cadenaIntro=prompt('Introduce un texto a cifrar');
+            if(cadenaIntro==false){
+                alert("Tienes que introducir texto.");
+            }else if(cadenaIntro==null){
+                alert("No puedes cancelar la operacion.")
+            }else if(!isNaN(cadenaIntro)){
+                alert("No introduzcas valores numericos, solo texto.");
+            }else{
+                salida=false;
+            }
+        }
+
+        //variable para salir una vez tengamos introducido un dato correcto
+        salida=true;
+        //condiciones de que el campo sea un numero obligatorio
+        while(salida){
+            numIntro=prompt('Introduce un numero para cifrar');
+            if(numIntro==false){
+                alert("Tienes que introducir algun numero.");
+            }else if(numIntro==null){
+                alert("No puedes cancelar la operacion.")
+            }else if(numIntro<1||numIntro>1000){
+                alert("El numero debe estar comprendido entre 1 y 1000.")
+            }else if(isNaN(numIntro)){
+                alert("No introduzcas valores de texto, solo numeros.");
+            }else{
+                salida=false;
+            }
+        }
+
+        //almacenamos la cadena
+        var arrayCadena=[];
+        //almacenaremos la suma del numero en la letra
+        var almacenFinal="";
+        //incrementamos la posicion del array numerico
+        var incremento=0;
+
+
+        for(let i=0; i<cadenaIntro.length; i++){
+            //almacenamos en el array la suma del numero mas el valor de la letra
+            arrayCadena[i]=cadenaIntro.charCodeAt(i)+parseInt(numIntro[incremento]);
+            //almacenamos la letra convertida con el valor sumado anteriormente
+            almacenFinal += String.fromCharCode(arrayCadena[i]);
+            incremento++;
+            //hacemos comprobacion para ver si necesitamos iniciar
+            //el array numerico para empezar con los valores de nuevo
+            if(incremento==numIntro.length){
+                incremento=0;
+            }
+        }
+        //mostramos el almacen final que tiene los valores sumados y convertidos a texto
+        alert(almacenFinal);
+    </script>
+</body>
+</html>

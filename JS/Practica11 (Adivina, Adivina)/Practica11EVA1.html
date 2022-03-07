@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica 11 EVA 1</title>
+</head>
+<body>
+    <script>
+        //variable num, asignamos un valor aleatorio, para luego adivinarlo.
+        var num = parseInt(Math.random()*101);
+        var intentos=0; //Contador de intentos.
+
+        do{
+            //El usuario introduce valor para intentar acertar el numero aleatorio.
+            intro = prompt("Intenta adivinar el numero secreto, comprendido entre 0 y 100");
+            intentos++; //Sumamos uno a la variable contador deintentos por cada vez que se inserte valor.
+
+            /*Condicion para comprobar que el numero introducido por el usuario, esté comprendido entre
+            0 y 100.*/
+            if(intro<0 || intro>100){
+                alert("El numero esta entre 0 y 100.");
+            }
+            
+        }while(num!=intro)  //Salimos del bucle con false, por ello decimos cuando sea diferente lo introducido que el numero aleatorio
+                            //asi, saldremos cuando acierte y sea false.
+
+        alert("Intentos: "+intentos); //Mostramos el numero de intentos que ha hecho el usuario.
+        var confirmar = confirm("Quieres volver a jugar??"); //Preguntamos si quiere jugar de nuevo.
+
+        //Si acepta jugar, repetimos el juego con otro numero aleatorio que se genera de nuevo
+        //si cancela, le damos un mensaje de despedida.
+        if(confirmar){
+
+                var num = parseInt(Math.random()*101);
+                var intentos=0;
+
+            do{
+                intro = prompt("Intenta adivinar el numero secreto, comprendido entre 0 y 100.");
+                intentos++;
+
+                if(intro<0 || intro>100){
+                    alert("El numero esta entre 0 y 100.");
+                }
+            }while(num!=intro)
+            alert("Intentos: "+intentos);
+            document.write("Bien jugado.");
+
+        }else{
+            document.write("Hasta luego...");
+        }
+
+    </script>
+</body>
+</html>
