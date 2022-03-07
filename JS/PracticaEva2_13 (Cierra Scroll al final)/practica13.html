@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRACTICA 13 EVA 2</title>
+    <style>
+        #contenedorTexto{
+            position: absolute;
+            top: 50px;
+            left: 25%;
+            background-color: rgb(206, 206, 206);
+            width: 50%;
+            height: 50%;
+            overflow-y: auto;
+            text-align: center;
+            border: 3px solid black;
+        }
+        button{
+            margin: 5%;
+            width: 90%;
+            background-color: yellow;
+            border: 3px solid black;
+            border-radius: 10px;
+        }
+        button:hover{
+            background-color: rgb(32, 32, 32);
+            color: yellow;
+            border: 3px solid yellow;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="contenedorTexto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit, temporibus blanditiis totam est dignissimos, fuga quae quo ratione consequuntur quos quam consectetur facilis error soluta facere magni. Earum, autem optio!
+    Officiis, fuga ut tempore quo illum quis pariatur rem possimus, nostrum atque doloremque voluptates, quisquam facilis illo vero corporis quos molestiae? Recusandae rerum minus totam error quae ullam deserunt voluptas.
+    Earum, sint? Architecto explicabo ratione eius fugit iste vel quos delectus incidunt accusamus dolor illo, blanditiis, voluptatem ex officiis esse, adipisci tempore officia perspiciatis. Ducimus laborum vero quia rem omnis?
+    Officia, dicta nisi explicabo distinctio autem earum ipsum et veniam, qui in quam culpa? Voluptatem facilis aspernatur distinctio sunt voluptatum nostrum, debitis inventore possimus iusto dolorum quia et id eos.
+    Molestias, ipsa provident? Tenetur qui maiores, quasi dolorum placeat optio quisquam, in sed nobis eum velit. Impedit, ullam est similique eligendi maiores adipisci, harum, magnam dolorem vitae suscipit unde obcaecati!
+    Saepe assumenda cupiditate fugiat necessitatibus velit maiores. Vel enim nulla excepturi, odit autem, necessitatibus assumenda veritatis quod maiores sunt beatae repellendus mollitia aut tempora adipisci eaque temporibus architecto et iusto?
+    Quas quia officia sed maiores ratione ipsum fuga voluptates excepturi maxime debitis nostrum explicabo rerum, vero velit illo tempore repellendus enim deleniti officiis. Ratione quibusdam minus soluta officiis provident voluptate!
+    Tempore aut optio libero cum odio ut aliquam! Maxime magnam expedita quidem, quod beatae harum ex voluptates repudiandae accusamus animi quos incidunt impedit earum sapiente in fugiat odio fuga? Vitae.
+    Dolor consequuntur maxime quasi officiis ad, corporis ut molestiae cum ipsam earum itaque accusamus perferendis fugit optio consequatur! Id recusandae quam molestias mollitia libero quisquam facere, nisi magnam dolorem laboriosam!
+    Omnis molestias esse reprehenderit vitae cupiditate, amet ea accusamus magnam facere quod incidunt quis eum ipsa ipsum eveniet error consequatur natus debitis obcaecati alias hic, et laudantium? Excepturi, laudantium distinctio?
+    </div>
+
+    <script>
+        
+        //RECOGEMOS EN UNA VARIABLE EL CONTENEDOR DE TEXTO
+        var contenedor = document.getElementById("contenedorTexto");
+        
+        //RECOJO EN UNA VARIABLE EN BODY PARA FUTUROS USOS
+        var body = document.getElementsByTagName("body");
+
+        //CREAMOS UN BOTON PARA EL FINAL DEL PARRAFO DEL CONTENEDOR DE TEXTO
+        var boton = document.createElement("button");
+        //LE PONEMOS AL BOTON EL SIGUIENTE TEXTO
+        boton.innerText="CERRAR";
+
+        //CREAMOS EVENTO DE SCROLL
+        contenedor.addEventListener("scroll", () => {
+            
+            //CONDICION QUE COMPRUEBA SI ESTAMOS AL FINAL DEL SCROLL
+            if (contenedor.clientHeight + contenedor.scrollTop >= contenedor.scrollHeight){
+                
+                //AÑADIMOS DENTRO DEL CONTENEDOR UN BOTON
+                contenedor.appendChild(boton);
+
+                //EL BOTON CREADO LE HACEMOS UN EVENTO DE CLICK
+                boton.addEventListener("click", ()=>{
+
+                    //SI SE HA HECHO CLICK, ELIMINAMOS EL DIV CON EL TEXTO COMPLETO
+                    body[0].removeChild(contenedor);
+
+                });
+            }
+        });
+
+    </script>
+</body>
+</html>

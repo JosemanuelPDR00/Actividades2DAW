@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica 19</title>
+    <style>
+        body{
+            background-color: rgb(73, 73, 195);
+            color: whitesmoke;
+            text-align: center;
+            padding-top: 10vh;
+        }
+        input{
+            margin: 1vh;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var body = document.getElementsByTagName('body')[0];
+
+        fetch("archivo.json")
+        .then(respuesta => {
+        if (respuesta.ok) { //Nos aseguramos que no haya errores
+            return respuesta.json(); //Devuelve un objeto en formato JSON
+        } else {
+            throw new Error("Los datos no llegaron bien");
+        }
+        })
+
+        .then(miJSON => { //Recoge nuestra respuesta JSON
+
+            //bucle for para reiterar los valores con clave-valor
+            for(clave in miJSON){
+
+                //creamos la variable valor que será la que tenga almacenada los valoress
+                var valor = miJSON[clave];
+
+                //creamos un label que llevará la clave que es el titular del input
+                var label = document.createElement('label');
+                var contenidoLabel = document.createTextNode(clave);
+                label.appendChild(contenidoLabel);
+                body.appendChild(label);
+
+                //creamos un input, que será el que muestre el valor de datos
+                var input = document.createElement('input');
+                input.value=valor;
+                body.appendChild(input);
+
+                //creo un elemento br, para que salgan mas elegante en plan formulario.
+                body.appendChild(document.createElement('br'));
+            }
+        })
+        //Lo podemos hacer así por miJSON es un objeto con sus propiedades
+        .catch(error => {
+            var parrafo = "";
+            parrafo.textContent = "Error: " + error;
+        });
+        </script>
+</body>
+</html>

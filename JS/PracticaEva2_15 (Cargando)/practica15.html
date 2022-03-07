@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica 15</title>
+    <style>
+        img{
+            margin: 50px;
+            position: relative;
+            height: 120px;
+            width: 120px;
+            visibility: 0;
+        }
+        div{
+            justify-content: center;
+            align-items: center;
+            font-size: 3em;
+            z-index: 3;
+            position: absolute;
+            background-color: crimson;
+            display: flex;
+            height: 50vh;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="cargando">Cargando...</div>
+
+    <img src="https://source.unsplash.com/random">
+    <img src="https://www.fillmurray.com/640/360">
+    <img src="https://loremflickr.com/1920/1048">
+    <img src="https://picsum.photos/1920/1048">
+    <!--
+        Profesor si ves que  tarda mucho es por este enlace de abajo,
+        borrelo o comentelo para hacer la prueba y comrpueba que funciona de una manera mas rapida
+    -->
+    <img src="https://lorempixel.com/1920/1048">
+
+    <script>
+        //recogemos en una variable la capa body que utilizo mas adelante
+        var body = document.getElementsByTagName('body');
+
+        //recogemos en una variable el div que luego será borrado
+        //para dejar paso a las imagenes
+        var capa = document.getElementById('cargando');
+
+        //hacemos un evento sobre load, que lo hace una vez cargado
+        window.addEventListener("load", function(event) {
+            //lo que hacemos es borrar la capa que es el div que pone Cargando...
+            body[0].removeChild(capa);
+        });
+
+        //ya tendriamos las imagenes en pantalla 
+    </script>
+
+</body>
+</html>

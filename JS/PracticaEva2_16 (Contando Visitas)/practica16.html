@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica16</title>
+</head>
+<body>
+
+    <script>
+        //condicion de que si existe la cookie incremente su valor
+        if(document.cookie){
+            //separamos por ';' los datos de la cookie
+            let arrayCookie = document.cookie.split("; ");
+            //recorremos la cookie
+            for (let miCookie of arrayCookie){
+                //recogemos la cookie por clave,valor, separados por '='
+                let [clave,valor] = miCookie.split("=");
+                //mostramos mensaje de salida del valor de la cookie
+                document.write(`La cookie tiene el valor ${valor}`);
+                //variable con el valor q vamos incrementando conforme recarguemos la pagina
+                var valorCogido = parseInt(valor)+1;
+                //creamos la cookie con tiempo de expiracion de 1año
+                document.cookie=`visualizaciones=${valorCogido}; max-age=60*60*24*365`;
+            }
+
+        }else{
+            //si no existe la cookie, mostamos mensaje, en el caso de aceptar
+            if(confirm('Esta pagina utiliza cookies.')){
+                //creamos la cookie y estamos entro y si cancelamos saldriamos
+                document.cookie="visualizaciones=1; max-age=60*60*24*365";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica 11 EVA 2</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        #capa{
+            width: 500px;
+            height: 500px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <!--CAPA QUE MOSTRARÁ LA IMAGEN-->
+    <div id="capa"></div>
+    <script>
+        //variable capa que hace una funcion cuando se pulsen teclas
+        let cuerpo = addEventListener("keydown", function(ev){
+            //si el evento se hace sobre Alt + F12
+            if(ev.altKey && ev.key=="F12"){
+                //cogemos el apartado con ID capa
+                let capa = document.getElementById('capa');
+                //le añadimos de fondo la imagen de la url facilitada en el ejercicio
+                capa.style.backgroundImage="url('https://source.unsplash.com/random')";
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica17</title>
+</head>
+<body>
+
+    <form action="#" method="post">
+        Nombre: <input type="text" name="nombre" id="nombre" placeholder="Escribe tu nombre completo">
+        <br>
+        <br>
+        Email: <input type="email" name="email" id="email" placeholder="ejemplo@um.es">
+        <br>
+        <br>
+        Telefono: <input type="tel" name="telefono" id="telefono" placeholder="Ej. +34668899999">
+        <br>
+        <br>
+        Pais: <input type="text" name="pais" id="pais">
+        <br>
+        <br>
+        <input type="submit" name="guardar" id="guardar" value="RECORDAR">
+        <input type="reset" name="eliminar" id="eliminar" value="ELIMINAR">
+    </form>
+    
+    <script>
+        //Recogemos los botones de guardar y eliminar
+        var guardar = document.getElementById('guardar');
+        var eliminar = document.getElementById('eliminar');
+
+        //Instanciamos varibles que necesitaremos a continuacion
+        var valorNombre;
+        var valorEmail;
+        var valorTelefono;
+        var valorPais;
+
+        //Si pulsamos el boton de guardar, recogemos las cookies de los campos input
+        guardar.addEventListener("click", () => {
+            //Recogemos los distintos input
+            var nombre = document.getElementById('nombre');
+            var email = document.getElementById('email');
+            var telefono = document.getElementById('telefono');
+            var pais = document.getElementById('pais');
+            //Añadimos el valor a otra variable para trabajar con los valores
+            var valorNombre = nombre.value;
+            var valorEmail = email.value;
+            var valorTelefono = telefono.value;
+            var valorPais = pais.value;
+            //Creamos la cookie
+            document.cookie="nombre="+valorNombre+"; max-age=60*60*24*365";
+            document.cookie="email="+valorEmail+"; max-age=60*60*24*365";
+            document.cookie="telefono="+valorTelefono+"; max-age=60*60*24*365";
+            document.cookie="pais="+valorPais+"; max-age=60*60*24*365";
+        });
+
+
+
+        //Si pulsamos sobre el boton de eliminar, eliminaremos las cookies
+        eliminar.addEventListener("click", ()=>{
+            //Rompemos la cookie
+            document.cookie="nombre="+valorNombre+"; expires=Sat, 01 Jan 2021 00:00:01 GMT";
+            document.cookie="email="+valorEmail+"; expires=Sat, 01 Jan 2021 00:00:01 GMT";
+            document.cookie="telefono="+valorTelefono+"; expires=Sat, 01 Jan 2021 00:00:01 GMT";
+            document.cookie="pais="+valorPais+"; expires=Sat, 01 Jan 2021 00:00:01 GMT";
+        });
+
+
+
+        if(document.cookie){
+            //separamos por ';' los datos de la cookie
+            let arrayCookie = document.cookie.split("; ");
+
+            //INPUTS
+            var nombre = document.getElementById('nombre');
+            var email = document.getElementById('email');
+            var telefono = document.getElementById('telefono');
+            var pais = document.getElementById('pais');
+
+            //creamos un array para almacenar los valores de las cookies
+            let arrayValores = [];
+
+            //recorremos la cookie
+            for (let miCookie of arrayCookie){
+                //recogemos la cookie por clave,valor, separados por '='
+                let [clave,valor] = miCookie.split("=");
+                //Recogemos los datos de la cookie
+                arrayValores[clave]=valor;
+            }
+
+            //Añadimos los valores del array de cookie a los input
+            nombre.value = arrayValores['nombre'];
+            email.value = arrayValores['email'];
+            telefono.value = arrayValores['telefono'];
+            pais.value = arrayValores['pais'];
+        }
+
+    </script>
+</body>
+</html>

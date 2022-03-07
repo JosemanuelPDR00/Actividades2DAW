@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica 12 EVA 2</title>
+    <style>
+        #capa{
+            width: 500px;
+            height: 500px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div id="capa">
+    </div>
+    <script>
+        //cogemos en una variable la capa creada, para trabajar con ella
+        let capa = document.getElementById('capa');
+
+        //si el raton entra sobre la capa, realizamos una funcion anonima
+        capa.addEventListener("mouseenter",()=>{
+            //la funcion hace que la capa sea de color verde
+            capa.style.backgroundColor="green";
+        });
+
+        //si el raton hace click sobre la capa, salta la funcion anonima
+        capa.addEventListener("click",()=>{
+            //color de la capa rojo
+            capa.style.backgroundColor="red";
+        });
+
+        //si el raton hace click derecho sobre la capa, salta la funcion anonima
+        capa.addEventListener("contextmenu",(ev)=>{
+            //hacemos que su forma normal de actuar no lo haga y cambiamos su funcionamiento
+            ev.preventDefault();
+            //el nuevo funcionamiento es poner la capa de color azul
+            capa.style.backgroundColor="blue";
+        });
+
+        //extraordinariamente al ejercicio, si salimos de la capa
+        //volvemos a ponerla de color blanco.
+        capa.addEventListener("mouseleave",()=>{
+            capa.style.backgroundColor="white";
+        });
+
+
+    </script>
+</body>
+</html>

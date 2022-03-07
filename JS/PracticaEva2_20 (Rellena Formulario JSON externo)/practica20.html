@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica 20</title>
+    <style>
+        body{
+            background-color: rgb(180, 180, 224);
+            color: whitesmoke;
+            text-align: center;
+            padding-top: 10vh;
+        }
+        input{
+            margin: 1vh;
+        }
+        button{
+            background-color: greenyellow;
+            border: 2px solid black;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <button id="dec">DECREMENTO</button>
+    <button id="inc">INCREMENTO</button>
+    <br>
+    <br>
+    <script>
+        //Recogemos los diferentes campos de html con los que trabajaremos
+        var body = document.getElementsByTagName('body')[0];
+        var decremento = document.getElementById('dec');
+        var incremento = document.getElementById('inc');
+
+        //Recogemos los datos del JSON
+        fetch("http://jsonplaceholder.typicode.com/posts")
+        .then(respuesta => {
+        if (respuesta.ok) { //Nos aseguramos que no haya errores
+            return respuesta.json(); //Devuelve un objeto en formato JSON
+        } else {
+            throw new Error("Los datos no llegaron bien");
+        }
+        })
+        //Recoge respuesta JSON
+        .then(miJSON => {
+            //variable que hacemos para recorrer las posiciones
+            var posicion = 0;
+            //bucle for para reiterar los valores con clave-valor
+            for(clave in miJSON[posicion]){
+
+                //creamos la variable valor que será la que tenga almacenada los valores
+                //dependiendo de la posicion
+                var valor = miJSON[posicion][clave];
+                //creamos un label que llevará la clave que es el titular del input
+                var label = document.createElement('label');
+                var contenidoLabel = document.createTextNode(clave);
+                label.appendChild(contenidoLabel);
+                body.appendChild(label);
+                //creamos un input, que será el que muestre el valor de datos
+                var input = document.createElement('input');
+                //le añadimos el atributo id para trabajar luego sobre este campo
+                input.setAttribute("id", clave);
+                input.value=valor;
+                body.appendChild(input);
+                //creo un elemento br, para que salgan mas elegante en plan formulario.
+                body.appendChild(document.createElement('br'));
+            }
+
+            //Evento click para mostrar la posicion inferior.
+            decremento.addEventListener('click', ()=>{
+                if(posicion==0){
+                    alert('No puedes decrementar mas')
+                }else{
+                    posicion--;
+
+                    for(clave in miJSON[posicion]){
+
+                        //mostramos la variable valor que será la que tenga almacenada los valores
+                        //dentro de la posicion correcta
+                        var valor = miJSON[posicion][clave];
+
+                        //mostramos dentro del input el valor de los datos de la posicion decrementada
+                        var input = document.getElementById(clave);
+                        input.value=miJSON[posicion][clave];
+
+                    }
+                }
+            });
+
+            //Evento igual al de arriba, solo que incrementamos el valor de la posicion
+            incremento.addEventListener('click', ()=>{
+                if(miJSON.length == (posicion-1) ){
+                    alert('No puedes incrementar mas');
+                }else{
+                    posicion++;
+
+                    for(clave in miJSON[posicion]){
+
+                        var valor = miJSON[posicion][clave];
+                        var input = document.getElementById(clave);
+                        input.value=miJSON[posicion][clave];
+                    }
+                }
+            });
+
+        })
+        //Lo podemos hacer así por miJSON es un objeto con sus propiedades
+        .catch(error => {4
+            var parrafo = "";
+            parrafo.textContent = "Error: " + error;
+        });
+        </script>
+</body>
+</html>

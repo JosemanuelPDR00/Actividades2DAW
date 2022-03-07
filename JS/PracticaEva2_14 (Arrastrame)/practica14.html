@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 100px;
+            border: 1px solid black;
+        }
+        .capa1{
+            position: absolute;
+            top: 20px;
+            left: 50px;
+            background-color: yellow;
+        }
+        .capa2{
+            position: absolute;
+            top: 20px;
+            left: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="capa1" draggable="true">Soy arrastrable</div>
+    <div class="capa2" draggable="false">Soy el destino</div>
+
+    <script>
+
+        //RECOGEMOS LAS DOS CAPAS O CONTENEDORES POR SU ETIQUETA
+        var capa1 = document.getElementsByClassName("capa1");
+        var capa2 = document.getElementsByClassName("capa2");
+
+        //A LA PRIMERA CAPA LE AÑADIMOS UN EVENTO, QUE CUANDO SEA ARRASTRADO
+        //SU COLOR ES AMARILLO
+        capa1[0].addEventListener("dragstart", () => {
+            capa1[0].style.backgroundColor = "yellow";
+        });
+
+        //A LA SEGUNDA CAPA, LE AÑADIMOS UN EVENTO Y LO QUE HACE ES QUE AL
+        //ENTRAR EN LA CAPA DESTINO, CAMBIA EL COLOR A ROJO
+        capa2[0].addEventListener("dragenter", () => {
+            capa2[0].style.backgroundColor = "red";
+        });
+
+        //OTRO EVENTO DE LA CAPA2, SI SALIMOS CON EL OBJETO QUE ARRASTRAMOS
+        //DEJAMOS LA CAPA EN COLOR BLANCO, ASI HACEMOS EFECTO DE ENTRADA Y SALIDA
+        //EN LA CAPA DESTINO
+        capa2[0].addEventListener("dragleave", () => {
+            capa2[0].style.backgroundColor = "white";
+        });
+
+        //HACEMOS QUE EL EFECTO DROGOVER NO SE HAGA YA QUE ES OBLIGATORIO
+        //PARA HACER EL SIGUIENTE EVENTO
+        capa2[0].addEventListener("dragover", (ev) => {
+            ev.preventDefault();
+        });
+
+        //SI SOLTAMOS SOBRE LA CAPA2 LA CAPA1, LA CAPA1 DESAPARECE OCULTANDOLA
+        //Y PONEMOS LA CAPA2 DE COLOR DE LA CAPA1, ASI HACEMOS EL EFECTO DE DESPLAZAMIENTO
+        capa2[0].addEventListener("drop", () => {
+            capa2[0].style.backgroundColor = "yellow";
+            capa1[0].style.opacity=0;
+        });
+
+
+    </script>
+</body>
+</html>
