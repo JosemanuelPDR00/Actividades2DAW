@@ -1,0 +1,328 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    background-color: lightslategrey;
+    font-family: 'Literata', serif;
+}
+
+h1{
+    font-size: 2.5em;
+    display: flex;
+    margin-top: 2%;
+    justify-content: center;
+    color: gainsboro;
+}
+
+hr{
+    display: flex;
+    margin: 0% 5% 2% 5%;
+    color: gainsboro;
+}
+/*--------------------------------------------------*/
+/*Aqui englobamos el proximo contenedor, el titulo y la linea*/
+#contenedorGeneral{
+    display: flex;
+    background-color: darkslategray;
+    margin: 5% 10%;
+    flex-wrap: wrap;
+    flex-direction: column;
+    border: 5px solid gainsboro;
+    border-radius: 10px;
+    align-content: center;
+}
+/*Aqui contenemos las cartas en filas ajustados al centro*/
+#contenedorCartas{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/*----------------------------------------------------------*/
+
+.corazon{
+    color: #900007;
+    font-size: 2.5em;
+}
+
+.carta{
+    display: flex;
+    height: 264px;
+    width: 186px;
+    background-color: gainsboro;
+    border: 0.5px solid black;
+    border-radius: 5px;
+    margin: 2%;
+    box-shadow: rgba(0, 0, 0, 0.5) 5px 5px 10px;
+    justify-content: space-between;
+}
+
+/*---------------------------------------------------------------*/
+.esquinaSuperior{
+    display: flex;
+    margin: 3px;
+    flex-direction: column;
+    color: #900007;
+}
+.numerito{
+    margin-left: 3px;
+}
+.numerito10{
+    margin-left: 4px;
+}
+.corazoncito{
+    margin-left: 3px;
+}
+.corazoncito10{
+    margin-left: 7px;
+}
+.corazoncitoA{
+    margin-left: 4px;
+}
+
+/*---------------------------------------------------------------*/
+
+.esquinaInferior{
+    display: flex;
+    margin: 3px;
+    flex-direction:column-reverse;
+    color: #900007;
+    justify-items: center;
+}
+.numeritoInferior{
+    transform: rotateZ(180deg);
+    margin-right: 6px;
+}
+.corazoncitoInferior{
+    transform: rotateZ(180deg);
+    margin-right: 5px;
+}
+.numeritoInferior10{
+    transform: rotateZ(180deg);
+}
+.corazoncitoInferior10{
+    transform: rotateZ(180deg);
+    margin-right: 4px;
+}
+.corazoncitoInferiorA{
+    margin-right: 7px;
+}
+
+/*---------------------------------------------------------------*/
+
+.contenedorFiguras{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+/*----------------------------------------------------------------*/
+
+.contenedorFiguras1{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/*----------------------------------------------------------------*/
+
+.contenedorFiguras2{
+    margin: 7px;
+    display: flex;
+    height: 250px;
+    justify-content: space-between;
+}
+#figura22{
+    transform: rotateZ(180deg);
+}
+
+/*---------------------------------------------------------------*/
+
+.contenedorFiguras3{
+    margin: 7px;
+    display: flex;
+    height: 250px;
+    justify-content: space-between;
+}
+#figura33{
+    transform: rotateZ(180deg);
+}
+
+/*----------------------------------------------------------------*/
+.contenedorFiguras4{
+    margin: 7px;
+    display: flex;
+    flex-direction: row;
+    height: 250px;
+    width: 200px;
+    justify-content: space-between;
+}
+.contenedorFiguras41, .contenedorFiguras42{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#figura42, #figura44{
+    transform: rotateZ(180deg);
+}
+/*-----------------------------------------------------------------*/
+.contenedorFiguras5{
+    margin: 7px;
+    display: flex;
+    flex-direction: row;
+    height: 250px;
+    width: 200px;
+    justify-content: space-between;
+}
+.contenedorFiguras51, .contenedorFiguras52{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#figura52, #figura55{
+    transform: rotateZ(180deg);
+}
+#figura53{
+    align-self: center;
+}
+/*-----------------------------------------------------------------*/
+.contenedorFiguras6{
+    margin: 7px;
+    display: flex;
+    flex-direction: row;
+    height: 250px;
+    width: 200px;
+    justify-content: space-between;
+}
+.contenedorFiguras61, .contenedorFiguras62{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#figura63, #figura66{
+    transform: rotateZ(180deg);
+}
+/*-----------------------------------------------------------------*/
+.contenedorFiguras7{
+    margin: 7px;
+    display: flex;
+    flex-direction: row;
+    height: 250px;
+    width: 200px;
+    justify-content: space-between;
+}
+.contenedorFiguras71, .contenedorFiguras73{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.contenedorFiguras72{
+    display: flex;
+    height: 150px;
+}
+
+#figura73, #figura77{
+    transform: rotateZ(180deg);
+}
+#figura74{
+    align-self: center;
+}
+/*-----------------------------------------------------------------*/
+.contenedorFiguras8{
+    margin: 7px;
+    display: flex;
+    flex-direction: row;
+    height: 250px;
+    width: 200px;
+    justify-content: space-between;
+}
+.contenedorFiguras81, .contenedorFiguras82, .contenedorFiguras83{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.contenedorFiguras82{
+    justify-content: space-evenly;
+}
+
+#figura83,#figura85, #figura88{
+    transform: rotateZ(180deg);
+}
+/*-----------------------------------------------------------------*/
+.contenedorFiguras9{
+    margin: 7px;
+    display: flex;
+    flex-direction: row;
+    height: 250px;
+    width: 200px;
+    justify-content: space-between;
+}
+.contenedorFiguras91, .contenedorFiguras93{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.contenedorFiguras92{
+    display: flex;
+    height: 160px;
+    align-self: center;
+}
+
+#figura93,#figura94,#figura98,#figura99{
+    transform: rotateZ(180deg);
+}
+/*-------------------------------------------------------------*/
+.contenedorFiguras10{
+    margin: 7px;
+    display: flex;
+    flex-direction: row;
+    height: 250px;
+    width: 200px;
+    justify-content: space-between;
+}
+.contenedorFiguras101, .contenedorFiguras103{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.contenedorFiguras102{
+    display: flex;
+    flex-direction: column;
+    height: 160px;
+    align-self: center;
+    justify-content: space-between;
+}
+
+#figura103,#figura104,#figura106,#figura109,#figura110{
+    transform: rotateZ(180deg);
+}
+#figura105{
+    align-self: center;
+    align-content: space-between;
+}
+/*------------------------------------------------------------*/
+
+@-moz-document url-prefix(){
+    .numerito{
+        margin-left: 6px;
+    }
+    .numeritoInferior{
+        margin-right: 8px;
+    }
+    .numerito10{
+        margin-left: 5px;
+    }
+    .numeritoInferior10{
+        margin-right: 3px;
+    }
+    .corazon{
+        font-size: 2em;
+    }
+}

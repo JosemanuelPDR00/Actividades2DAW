@@ -1,0 +1,168 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*-----------------------------------------------------------*/
+/*Configuracion del fondo y el tipo de letray color*/
+html{
+    background-color: honeydew;
+    color: whitesmoke;
+    font-family: 'Archivo Narrow', sans-serif;
+}
+/*Configuracion de la linea inferior del titulo*/
+hr{
+    color: whitesmoke;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+/*----------------------------------------------------------*/
+
+/*Contenedor que abarca todo*/
+#contenedorInicial{
+    background-color: grey;
+    border: 3px solid darkslategrey;
+    margin: 5% 20% 0% 20%;
+    text-align: center;
+    border-radius: 15px;
+}
+
+/*Contenedor que engloba a los dados*/
+#contenedorDados{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/*----------------------------------------------------------*/
+
+/*Configuracion de los dados generica*/
+.dado{
+    border-radius: 10%;
+    border: 2px solid whitesmoke;
+    height: 150px;
+    width: 150px;
+    margin: 3% 0.5% 2% 0.5%;
+}
+
+/*Configuracion de los puntos*/
+.punto{
+    height: 25px;
+    width: 25px;
+    background-color: whitesmoke;
+    border-radius: 50%;
+    margin: 10px;
+}
+
+/*--------------------------------------------------------*/
+
+/*DADO 1*/
+#dado1{
+    background-color: maroon;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*--------------------------------------------------------*/
+
+/*DADO 2*/
+#dado2{
+    background-color: chocolate;
+    display: flex;
+    justify-content: space-between;
+}
+#punto21{
+    align-self: flex-end;
+}
+#punto22{
+    align-self: flex-start;
+}
+
+/*------------------------------------------------------------*/
+
+/*DADO 3*/
+#dado3{
+    background-color: darkorange;
+    display: flex;
+    justify-content: space-between;
+}
+
+#punto31{
+    align-self: flex-end;
+}
+
+#punto32{
+    align-self: center;
+}
+
+#punto33{
+    align-self: start;
+}
+
+/*-----------------------------------------------------------*/
+
+#dado4{
+    background-color: darkgreen;
+    display: flex;
+    justify-content: space-between;
+}
+
+.fila41{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.fila42{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/*-----------------------------------------------------------*/
+
+#dado5{
+    background-color: navy;
+    display: flex;
+    justify-content: space-between;
+}
+
+.fila51{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.fila52{
+    align-self: center;
+}
+
+.fila53{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/*-------------------------------------------------------------*/
+
+#dado6{
+    background-color: indigo;
+    display: flex;
+    justify-content: space-between;
+}
+
+.fila61{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.fila62{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
