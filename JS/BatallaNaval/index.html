@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BatallaNaval</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <h1>BATALLA NAVAL</h1>
+
+    <script>
+        fila=10;
+        columna=10;
+        
+        //Array tablero
+        const Tablero = new Array(fila);
+        //Recogemos las columnas dentro de cada fila del tablero
+        for (i=0; i<fila; i++) {
+            Tablero[i] = new Array(columna);
+        }
+        console.log(Tablero);
+
+        function crearTablero(fila, columna){
+
+            //Iniciamos el tablero
+            document.write("<table>");
+
+            //Pintamos las lineas 
+            for(i=0; i< fila; i++){
+
+                //Pintamos las filas
+                document.write("<tr>");
+                
+                //Pintamos las columnas
+                for (j=0; j<columna; j++){
+                    //Pintamos la celda que forma la columna, depediendo si:
+
+                    //Si es true, representa el barco y lo pintamos de gris
+                    if(Tablero[i][j]==true){
+                        document.write(`<td style='background-color:grey;'></td>`);
+                    
+                    }else if(Tablero[i][j]=='x'){
+                    //Si es 'x', representa el espacio libre entre barcos, lo pintamos de blenco,
+                    //representando las olas del lateral del barco
+                        document.write(`<td style='background-color:cyan;'></td>`);
+                    }else{
+                        //Si es false, representa el agua y lo pintamos de cyan
+                        document.write(`<td style='background-color:cyan;'></td>`);
+                    }
+                }
+                //Terminamos de pintar las filas
+                document.write("</tr>");
+            }
+            //Terminamos de pintar la tabla
+            document.write("</table>");
+        }
+
+        //Con esta funcion obtenemos la posicion aleatoria dentro del array
+        function aleatoriaPosicion(){
+            return Math.floor(Math.random()*10);
+        }
+
+        //Con esta funcion obtenemos la orientacion del barco de forma aleatoria
+        function aleatoriaOrientacion(){
+            return Math.round(Math.random());
+        }
+
+
+        function crearBarco(tamanioBarco){
+
+            //cogemos aleatoriamente la coordenada X
+            let x = aleatoriaPosicion();
+            //cogemos aleatoriamente la coordenada Y
+            let y = aleatoriaPosicion();
+            //cogemos aleatoriamente la orientacion del barco
+            let o = aleatoriaOrientacion();
+            //Espacio respetable del barco
+            let espacio = true;
+
+            //Si esta en horizontal el barco
+            if(o==0){
+                //Y la posicion del barco sobresale,
+                if((x+(tamanioBarco - 1))>9){
+                    //restamos el tamaño del barco, para dejarlo dentro del tablero
+                    x-=tamanioBarco;
+                }
+            }else{
+                //Si el tamaño del barco sobresale en vertical,
+                if((y+(tamanioBarco - 1))>9){
+                    //restamos el tamaño del barco para dejarlo dentro del tablero
+                    y-=tamanioBarco;
+                }
+            }
+
+            do{
+                //iniciamos la variable que será la que nos deje salir del bucle
+                espacio = true;
+                //Comprobamos si la orientacion es en horizontal
+                if(o==0){
+                    //Comprobamos los laterales del barco
+                    for(i= Math.max(0, y-1); i< Math.min(10, y+2); i++){
+                        //Comprobamos la parte inferior y supreior del barco
+                        for(j= Math.max(0, x-1); j< Math.min(10, x+tamanioBarco+1); j++){
+                            //Si la posion que se esta comprobando es true, es decir es un barco,
+                            if(Tablero[j][i] == true){
+                                //Marcamos en false el espacio necesario y volveriamos
+                                //a realziar la busqueda
+                                espacio=false;
+                            }
+                        }
+                    }
+                }
+
+                //Comprobamos si la orientacion es en vertical
+                if(o==1){
+                    //Comprobamos la parte inferior y supreior del barco
+                    for(i= Math.max(0, x-1); i< Math.min(10, x+2); i++){
+                        //Comprobamos los laterales del barco
+                        for(j= Math.max(0, y-1); j< Math.min(10, y+tamanioBarco+1); j++){
+                            //Si la posion que se esta comprobando es true, es decir es un barco,
+                            if(Tablero[i][j] == true){
+                                //Marcamos en false el espacio necesario y volveriamos
+                                //a realziar la busqueda
+                                espacio=false;
+                            }
+                        }
+                    }
+                }
+            
+                //Si el espacio es false, quiere decir que
+                //el espacio esta ocupado por algun barco
+                if(espacio==false){
+                    //nueva posicion de X
+                    x = aleatoriaPosicion();
+                    //nueva posicion de Y
+                    y = aleatoriaPosicion();
+                    //nueva orientacion del barco
+                    o = aleatoriaOrientacion();
+
+                    if(o==0){
+                        //Y la posicion del barco sobresale,
+                        if((x+(tamanioBarco - 1))>9){
+                            //restamos el tamaño del barco, para dejarlo dentro del tablero
+                            x-=tamanioBarco;
+                        }
+                    }else{
+                        //Si el tamaño del barco sobresale en vertical,
+                        if((y+(tamanioBarco - 1))>9){
+                            //restamos el tamaño del barco para dejarlo dentro del tablero
+                            y-=tamanioBarco;
+                        }
+                    }
+                }
+            
+            }while(espacio==false);
+
+
+
+            //si la orientacion del barco es horizontal, comprobamos las posiciones que esten a su alrededor
+            if(o == 0){
+                //recorremos las partes laterales, incluyendo condiciones de max y min para que no
+                //sobresalgan del tablero
+                for(i= Math.max(0,y-1) ; i< Math.min(10, y+2) ; i++ ){
+                    //recorremos las partes inferiores y superiores, incluyendo condiciones de max y min para que no
+                    //sobresalgan del tablero
+                    for(j= Math.max(0,x-1) ; j< Math.min(10, x+tamanioBarco+1) ; j++ ){
+                        //añadimos valor a las posiciones laterales del barco
+                        Tablero[j][i]="x";
+                    }
+                }
+
+            //si la orientacion del barco es vertical, comprobamos las posiciones que esten a su alrededor
+            }else{
+                //recorremos las partes laterales, incluyendo condiciones de max y min para que no
+                //sobresalgan del tablero
+                for(i= Math.max(0,x-1) ; i< Math.min(10, x+2) ; i++ ){
+                    //recorremos las partes inferiores y superiores, incluyendo condiciones de max y min para que no
+                    //sobresalgan del tablero
+                    for(j= Math.max(0,y-1) ; j< Math.min(10, y+tamanioBarco+1) ; j++ ){
+                        //añadimos valor a las posiciones laterales del barco
+                        Tablero[i][j]="x";
+                    }
+                }
+            }
+
+            //si la orientacion es horizontal
+            if(o==0){
+                //recorro el tamaño del barco
+                for(i=0;i<tamanioBarco;i++){
+                    //añadimos de valor true para diferenciar que es un barco
+                    Tablero[x][y]=true;
+                    //incrementamos la Y para que recorra el largo del barco
+                    x++;
+                }
+            }else{
+                //aqui sucede lo mismo solo que cuando sea la orientacion del barco en vertical
+                for(i=0;i<tamanioBarco;i++){
+                    Tablero[x][y]=true;
+                    y++;
+                }
+            }
+
+        }//functiones crearBarco
+        crearBarco(5);
+        crearBarco(4);
+        crearBarco(4);
+        crearBarco(3);
+        crearBarco(3);
+        crearBarco(2);
+        crearBarco(2);
+
+        crearTablero(fila,columna);
+
+        </script>
+</body>
+</html>
