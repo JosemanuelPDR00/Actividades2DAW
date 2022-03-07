@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="JoseManuel Perez del Rio">
+    <meta name="description" content="Proyecto 2 Desarrollo Interfaces Web">
+    <title>Page 3</title>
+    <link rel="icon" type="imagen/x-icon" href="./img/lechuga.png" sizes="32x32">
+</head>
+<body>
+    <nav id="nav">
+        <p>
+            <a href="./pagina1.html">Page 1</a>
+            <a href="./pagina2.html">Page 2</a>
+            <a href="./pagina3.html">Page 3</a>
+        </p>
+    </nav>
+    <h1>Form</h1>
+        <fieldset>
+        <form action="./recogidaPHP.php" method="post">
+            <legend>Personal information</legend>
+
+            <label for="nombre">First Name:</label>
+            <input type="text" name="nombre" id="nombre" size="35" maxlength="30" required>
+            <br>
+            <label for="apellido1">Surname:</label>
+            <input type="text" name="apellido1" id="apellido1" size="35" maxlength="30" required>
+            <br>
+            <label for="apellido2">Second surname:</label>
+            <input type="text" name="apellido2" id="apellido2" size="35" maxlength="30">
+            <br>
+            <label for="correo">Email</label>
+            <input type="email" name="correo" id="correo" size="35" maxlength="50" required value="correo@correo.xxx">
+            <br>
+            <label for="telefono">Telephone:</label>
+            <input type="text" name="telefono" id="telefono" size="35" maxlength="20">
+            <br>
+            <label for="fechanacimiento">Date of birth:</label>
+            <input type="date" name="fechanacimiento" id="fechanacimiento" value="2000-01-01">
+            <br>
+            <label for="paisnacimiento">Country of birth:</label>
+            <input type="text" name="paisnacimiento" id="paisnacimiento" value="España">
+            <br>
+            <p>Gender:</p>
+            <label for="genero">Man</label>
+            <input type="radio" name="genero" id="hombre" value="Hombre">
+            <label for="genero">Woman</label>
+            <input type="radio" name="genero" id="mujer" value="Mujer">
+            <label for="genero">Others</label>
+            <input type="radio" name="genero" id="otros" value="Otros">
+            <br>
+            <input type="submit" value="Enviar">
+        </form>
+        <footer>
+            Next Page: <a href="./pagina1.html">Page 1</a>
+            Next Page: <a href="./pagina2.html">Page 2</a>
+            Next Page: <a href="./pagina3.html">Page 3</a>
+        </footer>
+        </fieldset>
+</body>
