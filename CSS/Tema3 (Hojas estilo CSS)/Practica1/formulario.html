@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="StyleSheet" type="text/css" href="estilos.css">
+    <title>Formulario</title>
+</head>
+<body>
+    <h1>Introduzca datos</h1>
+    <fieldset>
+        <legend>Datos personales</legend>
+        <p>
+            <label for="nombre">Nombre:</label>
+            <input type="text" name="nombre" id="nombre" placeholder="Obligatorio">
+        </p>
+        <p>
+            <label for="apellidos">Apellidos:</label>
+            <input type="text" name="apellidos" id="apellidos" placeholder="Obligatorio">
+        </p>
+        <fieldset>
+            <legend>Edad:</legend>
+            <input type="radio" name="edad" id="18a25" value="18a25">
+            <label for="edad">18 a 25</label>
+            
+            <input type="radio" name="edad" id="26a35" value="26a35">
+            <label for="edad">26 a 35</label>
+
+            <input type="radio" name="edad" id="36a45" value="36a45">
+            <label for="edad">36 a 45</label>
+
+            <input type="radio" name="edad" id="46a55" value="46a55">
+            <label for="edad">46 a 55</label>
+
+            <input type="radio" name="edad" id="mayor55" value="mayor55">
+            <label for="edad">Mayor de 55</label>
+
+            <input type="radio" name="edad" id="NS/NC" value="NS/NC" checked>
+            <label for="edad" >NS/NC</label>
+        </fieldset>
+        <fieldset>
+            <legend>Intereses:</legend>
+            <label for="arte" class="asignaturas">Arte y Literatura</label>
+            <input type="checkbox" name="arte" value="arte" id="arte">
+            <br>
+            <label for="ciencia" class="asignaturas">Ciencia y Tecnología</label>
+            <input type="checkbox" name="ciencia" value="ciencia" id="ciencia">
+            <br>
+            <label for="politica" class="asignaturas">Política y Sociedad</label>
+            <input type="checkbox" name="politica" value="politica" id="politica">
+            <br>
+            <label for="ocio" class="asignaturas">Ocio y Deporte</label>
+            <input type="checkbox" name="ocio" value="ocio" id="ocio">
+            <br>
+            <label for="cine" class="asignaturas">Cine y Televisión</label>
+            <input type="checkbox" name="cine" value="cine" id="cine">
+        </fieldset>
+        <p>
+            <label for="codigoPostal">Código Postal:</label> 
+            <input type="text" id="codPostal" name="codPostal" size="5" maxlength="5" pattern="[0-9]{5}">
+        </p>
+    </fieldset>
+
+    <fieldset>
+        <legend>Otros datos</legend>
+
+        <p class="titulo">Color favorito</p>
+        
+        <input type="radio" name="color" id="rojo" checked>
+        <label for="color">Rojo</label>
+
+        <input type="radio" name="color" id="azul">
+        <label for="color">Azul</label>
+
+        <input type="radio" name="color" id="amarillo">
+        <label for="color">Amarillo</label>
+
+        <input type="radio" name="color" id="verde">
+        <label for="color">Verde</label>
+
+
+
+        <p class="titulo">Asignaturas favoritas</p>
+
+        <label for="dwec" class="asig">DWEC</label>
+        <input type="checkbox" id="dwec" value="dwec" name="dwec">
+        <br>
+        <label for="dwes" class="asig">DWES</label>
+        <input type="checkbox" id="dwes" value="dwes" name="dwes">
+        <br>
+        <label for="diw" class="asig">DIW</label>
+        <input type="checkbox" id="diw" value="diw" name="diw" checked>
+        <br>
+        <label for="daw" class="asig">DAW</label>
+        <input type="checkbox" id="daw" value="daw" name="daw">
+        <br>
+        <label for="eiem" class="asig">EIEM</label>
+        <input type="checkbox" id="eiem" value="eiem" name="eiem">
+
+
+
+        <p class="titulo">Probabilidad de aprobar</p>
+        <p>
+            <label for="porcentaje">Porcentaje</label>
+            <input type="number" id="porcentaje" name="porcentaje" size="5" step="5" max="100" value="50">
+        </p>
+
+    </fieldset>
+    <p id="botones">
+        <button type="submit" value="Enviar" id="boton1">Enviar formulario</button>
+        <button type="reset" value="ELiminar" id="boton2">Reiniciar formulario</button>
+    </p>
+</body>
+</html>

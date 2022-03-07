@@ -1,0 +1,113 @@
+body{
+    background-color: paleturquoise;
+    font-family: sans-serif;
+}
+
+fieldset{
+    background-color: lavender;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+fieldset>fieldset{
+    background-color: peachpuff;
+    margin-left: 0%;
+    margin-right: 35%;
+}
+
+h1{
+    text-align: center;
+}
+
+legend,h1{
+    color: royalblue;
+    font-weight: 600;
+}
+
+fieldset>p>label{
+    color: green;
+    font-weight:bold;
+}
+.asignaturas{
+    color: green;
+    font-style: italic;
+}
+
+.titulo{
+    color: mediumpurple;
+    font-size: 1.3em;
+    font-weight: 600;
+    font-style: italic;
+}
+
+p>button{
+    background-color: lemonchiffon;
+
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+#botones{
+    text-align: center;
+}
+#boton1{
+    color: royalblue;
+}
+#boton2{
+    color:gray;
+}
+
+input[placeholder="Obligatorio"]{
+    color: mediumvioletred;
+    background-color: lemonchiffon;
+}
+input[for="edad"]{
+        size: 35px;
+}
+#apellidos{
+    size: 120%;
+}
+
+label[for="edad"]{
+    color:rebeccapurple;
+    font-weight: bold;
+}
+
+input[type="radio"]:hover{
+    box-shadow: 0px 0px 5px green;
+}
+
+input[name="codPostal"]{
+    border-color: mediumpurple;
+}
+input[name="codPostal"]{
+    background-color:  lemonchiffon;
+}
+input[name="codPostal"]:invalid{
+    background-color: red;    
+}
+label[class="asignaturas"]+input:checked{
+    color: green;
+}
+
+label[class="asig"]{
+    color: green;
+    font-weight: 600;
+}
+#diw{
+    box-shadow: 2px 2px 2px orange;
+}
+input[name="porcentaje"]{
+    background-color: lemonchiffon;
+}
+input[type="radio"]:checked+label{
+    color: green;
+}
+label[for="color"]{
+    color: rebeccapurple;
+    font-weight: bold;
+}

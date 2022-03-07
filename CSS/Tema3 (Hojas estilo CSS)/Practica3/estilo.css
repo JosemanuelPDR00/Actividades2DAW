@@ -1,0 +1,85 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+html{
+    background-image: linear-gradient(orange, darkred);
+}
+
+header{
+    color: darkred;
+    text-align: center;
+    font-size: 4.2em;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    padding-top:7vh;
+    width: 100vw;
+    height: 15vh;
+}
+
+main{
+    width: 100vw;
+    height: 65vh;
+}
+
+.medio{
+    border-radius: 5px;
+    border: 5px solid white;
+    width: 29vw;
+    height: 60vh;
+    display: inline-block;
+    margin-top: 2.5vh;
+    margin-left: 2.5vw;
+    transition: background-color 2s linear;
+}
+
+.medio:hover{
+    transition: background-color 2s linear;
+    background-color: indigo;
+}
+
+.vehiculo{
+    height: 35vh;
+    text-align: center;
+    padding-top: 5vh;
+    font-size: 25vh;
+    color: white;
+    transition: font-size 2s linear, color 2s linear;
+}
+
+.vehiculo:hover{
+    transition: font-size 2s linear, color 2s linear;
+    font-size: 30vh;
+    color: darkorange;
+}
+
+.texto{
+    color: white;
+    font-size: 1em;
+    height: 15vh;
+    text-align: center;
+    padding-top: 5vh;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 3vw;
+    margin-right: 3vw;
+    opacity: 0%;
+    transform: rotateZ(90deg) scale(0.5, 0.5);
+}
+
+.texto:hover{
+    transition: opacity 3s linear, transform 5s linear;
+    opacity: 100%;
+    transform: rotateZ(0deg) scale(1.0, 1.0);
+}
+
+footer{
+    color: orange;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 2.5em;
+    padding-top: 3vh;
+    width: 100vw;
+    height: 10vh;
+}

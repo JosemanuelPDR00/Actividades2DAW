@@ -1,0 +1,98 @@
+*{
+    margin: auto;
+
+}
+
+body{
+    background: background-color: #CEDA39;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1200 800'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='600' y1='25' x2='600' y2='777'%3E%3Cstop offset='0' stop-color='%23CEDA39'/%3E%3Cstop offset='1' stop-color='%23FF963B'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='650' y1='25' x2='650' y2='777'%3E%3Cstop offset='0' stop-color='%23d2d439'/%3E%3Cstop offset='1' stop-color='%23f18e45'/%3E%3C/linearGradient%3E%3ClinearGradient id='c' gradientUnits='userSpaceOnUse' x1='700' y1='25' x2='700' y2='777'%3E%3Cstop offset='0' stop-color='%23d7ce39'/%3E%3Cstop offset='1' stop-color='%23e3874e'/%3E%3C/linearGradient%3E%3ClinearGradient id='d' gradientUnits='userSpaceOnUse' x1='750' y1='25' x2='750' y2='777'%3E%3Cstop offset='0' stop-color='%23dbc73a'/%3E%3Cstop offset='1' stop-color='%23d57f58'/%3E%3C/linearGradient%3E%3ClinearGradient id='e' gradientUnits='userSpaceOnUse' x1='800' y1='25' x2='800' y2='777'%3E%3Cstop offset='0' stop-color='%23e0c13a'/%3E%3Cstop offset='1' stop-color='%23c77762'/%3E%3C/linearGradient%3E%3ClinearGradient id='f' gradientUnits='userSpaceOnUse' x1='850' y1='25' x2='850' y2='777'%3E%3Cstop offset='0' stop-color='%23e4bb3a'/%3E%3Cstop offset='1' stop-color='%23b96f6b'/%3E%3C/linearGradient%3E%3ClinearGradient id='g' gradientUnits='userSpaceOnUse' x1='900' y1='25' x2='900' y2='777'%3E%3Cstop offset='0' stop-color='%23e9b53a'/%3E%3Cstop offset='1' stop-color='%23ac6875'/%3E%3C/linearGradient%3E%3ClinearGradient id='h' gradientUnits='userSpaceOnUse' x1='950' y1='25' x2='950' y2='777'%3E%3Cstop offset='0' stop-color='%23edaf3a'/%3E%3Cstop offset='1' stop-color='%239e607e'/%3E%3C/linearGradient%3E%3ClinearGradient id='i' gradientUnits='userSpaceOnUse' x1='1000' y1='25' x2='1000' y2='777'%3E%3Cstop offset='0' stop-color='%23f2a93a'/%3E%3Cstop offset='1' stop-color='%23905888'/%3E%3C/linearGradient%3E%3ClinearGradient id='j' gradientUnits='userSpaceOnUse' x1='1050' y1='25' x2='1050' y2='777'%3E%3Cstop offset='0' stop-color='%23f6a23b'/%3E%3Cstop offset='1' stop-color='%23825092'/%3E%3C/linearGradient%3E%3ClinearGradient id='k' gradientUnits='userSpaceOnUse' x1='1100' y1='25' x2='1100' y2='777'%3E%3Cstop offset='0' stop-color='%23fb9c3b'/%3E%3Cstop offset='1' stop-color='%2374499b'/%3E%3C/linearGradient%3E%3ClinearGradient id='l' gradientUnits='userSpaceOnUse' x1='1150' y1='25' x2='1150' y2='777'%3E%3Cstop offset='0' stop-color='%23FF963B'/%3E%3Cstop offset='1' stop-color='%236641A5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg %3E%3Crect fill='url(%23a)' width='1200' height='800'/%3E%3Crect fill='url(%23b)' x='100' width='1100' height='800'/%3E%3Crect fill='url(%23c)' x='200' width='1000' height='800'/%3E%3Crect fill='url(%23d)' x='300' width='900' height='800'/%3E%3Crect fill='url(%23e)' x='400' width='800' height='800'/%3E%3Crect fill='url(%23f)' x='500' width='700' height='800'/%3E%3Crect fill='url(%23g)' x='600' width='600' height='800'/%3E%3Crect fill='url(%23h)' x='700' width='500' height='800'/%3E%3Crect fill='url(%23i)' x='800' width='400' height='800'/%3E%3Crect fill='url(%23j)' x='900' width='300' height='800'/%3E%3Crect fill='url(%23k)' x='1000' width='200' height='800'/%3E%3Crect fill='url(%23l)' x='1100' width='100' height='800'/%3E%3C/g%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+main{
+    width: 99vw;
+    height: 98vh;
+}
+
+#cabecera{
+    height: 8vh;
+    width: 85vw;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 3vh;
+    border: 10px solid black;
+    font-size: 3.5em;
+    background-color: blue;
+    animation-name: fondoColor;
+    animation-duration: 10s;
+    animation-timing-function: ease;
+    animation-delay: 3s;
+    animation-direction:alternate;
+    animation-iteration-count: infinite;
+    /*animation-fill-mode: forwards;*/
+}
+
+#animado{
+    text-align: center;
+    font-size: 2em;
+    border: 3px solid black;
+    padding: 1vh;
+    height: 5vh;
+    width: 30vw;
+    text-shadow: 0px 0px 3px white;
+    background-color: darkred;
+    animation-name: movimiento;
+    animation-duration: 12s;
+    animation-timing-function:ease-out;
+    animation-delay: 0s;
+    animation-direction:normal;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+@keyframes movimiento {
+    20%{
+        background-color: red;
+        color: black;
+        transform: translateX(66vw);
+    }
+    35%{
+        background-color: orange;
+        transform: translateX(66vw) rotateZ(180deg);
+    }
+    50%{
+        background-color: green;
+        transform: translateX(33vw) translateY(35vh) rotateZ(90deg) rotateY(180deg);
+    }
+    65%{
+        background-color: lightskyblue;
+        transform: translateX(66vw) translateY(75vh) rotateZ(180deg) rotateX(360deg);
+    }
+    85%{
+        background-color: mediumpurple;
+        transform: translateX(0vw) translateY(75vh) rotateZ(180deg) rotateX(360deg) rotateY(180deg);
+    }
+    100%{
+        background-color: darkred;
+        color: yellow;
+        transform: translateX(0vw) translateY(0vh) rotateZ(180deg) rotateX(180deg) rotateY(180deg);
+    }
+}
+
+@keyframes fondoColor {
+    0%{
+        background-color: blue;
+    }
+    35%{
+        background-color: turquoise;
+    }
+    70%{
+        background-color: violet;
+    }
+    100%{
+        background-color:darkcyan;
+    }
+}

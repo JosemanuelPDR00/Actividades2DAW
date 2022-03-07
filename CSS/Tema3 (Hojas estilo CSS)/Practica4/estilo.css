@@ -1,0 +1,140 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    background-color: darkseagreen;
+    font-family: 'Domine';
+}
+
+#parte1{
+    background-color: gainsboro;
+    height: 82vh;
+    width: 70vw;
+    margin: auto;
+    margin-top: 2vh;
+    border-radius: 15px;
+    text-align: center;
+}
+
+#title{
+    font-family: 'Fredoka One';
+    font-size: 6em;
+    color: darkslategray;
+}
+
+.texto1{
+    margin-left: 3vw;
+    margin-right: 3vw;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+
+    color: darkslategray;
+    font-size: 1.3em;
+    text-align: left;
+}
+
+img{
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    height: 40vh;
+    width: 43vw;
+}
+
+
+
+#caja{
+    border: 2px solid white;
+    width: 70vw;
+    height: 98vh;
+    margin: auto;
+    margin-top: 1.5vh;
+    border-radius: 5px;
+}
+
+.contenedorTitulo{
+    background-color: whitesmoke;
+    margin-right: 0.5vh;
+    margin-left: 0.5vh;
+    margin-top: 0.5vh;
+    color: darkslategray;
+}
+
+.titulo{
+    margin-left: 1vw;
+    font-family: 'Fredoka One';
+    font-size: 1.5em;
+}
+
+.contenedorTexto{
+    background-color: seagreen;
+    margin-left: 0.5vh;
+    margin-right: 0.5vh;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+}
+.texto{
+    color: whitesmoke;
+    text-align: justify;
+    margin-left: 10vh;
+    margin-right: 10vh;
+    word-spacing: 5px;
+    line-height: 1.5;
+}
+
+.texto::first-letter{
+    font-size: 2em;
+    color: rgb(85, 52, 9);
+}
+
+.listado{
+    border: 10px solid lightslategrey;
+    margin-left: 8vh;
+    margin-right: 8vh;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    background-color: darkslategray;
+    color: whitesmoke;
+}
+
+li{
+    margin-left: 3vh;
+    text-align: justify;
+    font-style: italic;
+    line-height: 2;
+    word-spacing: 5px;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+a{
+    color: yellowgreen;
+}
+
+#parte4{
+    background-color: whitesmoke;
+    width: 70vw;
+    height: 10vh;
+    margin: auto;
+    margin-bottom: 2vh;
+    text-align: center;
+    padding-top: 1vh;
+}
+
+#final{
+    background-color: lightslategrey;
+    height: 8vh;
+    padding-top: 2.75vh;
+}
+
+a:hover{
+    font-size: 1.2em;
+    text-shadow: 0px 0px 5px hotpink;
+}
+
+.listado:hover{
+    border: 10px solid lawngreen;
+    background-color: rgb(69,90,27);
+}
