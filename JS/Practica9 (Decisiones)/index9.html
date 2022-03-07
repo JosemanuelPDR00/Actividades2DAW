@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea9</title>
+</head>
+<body>
+    <script>
+        /*Datos a introducir por el usuario*/
+        let nombre = prompt("Introduce tu nombre");
+        let apellido = prompt("Introduce tu apellidos");
+        let salario = parseInt(prompt("Introduce tu salario"));
+        let edad = prompt("Introduce tu edad");
+        
+        /*Si el sueldo es mayor a 2k no se añade nada extra*/
+        if(salario>2000){
+            document.write("Nombre: "+nombre+"<br>Apellido: "+apellido+"<br>Salario: "+salario+"<br>Edad: "+edad);
+        }
+        
+        /*Si el sueldo esta entre 1k y 2k, depende de la edad del trabajado para saber cuanto añadirle extra*/
+        if(salario<2000 && salario>1000){
+            if(edad>45){
+                salario=salario+salario*0.03;
+            }else{
+                salario=salario+salario*0.1;
+            }
+            document.write("Nombre: "+nombre+"<br>Apellido: "+apellido+"<br>Salario: "+salario+"<br>Edad: "+edad);
+        }
+        
+        /*Igual que el apartado anterior pero con sueldos menores a 1k*/
+        if(salario<1000){
+            if(edad<30){
+                salario=salario=1100;
+            }else if(edad>30 && edad<45){
+                salario=salario+salario*0.03;
+            }else if(edad>45){
+                salario=salario+salario*0.15;
+            }
+            document.write("Nombre: "+nombre+"<br>Apellido: "+apellido+"<br>Salario: "+salario+"<br>Edad: "+edad);
+        }
+
+    </script>
+</body>
+</html>

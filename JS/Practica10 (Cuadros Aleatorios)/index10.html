@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica10</title>
+</head>
+<body>
+    <script>
+        //Estilos para las etiquetas HTML, BODY y DIV.
+        document.write("<style>html,body,div{height: 50px; width: 50px;}</style>");
+
+        //Bucle que se repite 2000 veces.
+        for(var i=0;i<2000;i++){
+            //variable rojo, se le da un valor aleatorio, para sacar la gama de rojo.
+            var red= parseInt(Math.random()*256);
+            console.log(red);
+            //variable verde, se le da un valor aleatorio, para sacar la gama de verde.
+            var green= parseInt(Math.random()*256);
+            console.log(green);
+            //variable azul, se le da un valor aleatorio, para sacar la gama de azul
+            var blue= parseInt(Math.random()*256);
+            console.log(blue);
+
+            //variables altura y anchura que le daremos.
+            var altura= parseInt(Math.random()*100)+1;
+            var anchura= parseInt(Math.random()*100)+1;
+
+            //mostramos la figura con el color aleatorio, y la posicion aleatoria en altura y anchura.
+            document.write('<div id="div1" style="background-color: rgb('+red+','+green+','+blue+'); top:'+altura+'%; left:'+anchura+'%; position: fixed;">ㅤ</div>');
+        }
+    </script>
+</body>
+</html>
