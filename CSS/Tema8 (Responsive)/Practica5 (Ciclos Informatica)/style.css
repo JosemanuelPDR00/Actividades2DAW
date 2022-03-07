@@ -1,0 +1,265 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html{
+    font-family: 'Electrolize', sans-serif;
+}
+    body{
+        overflow-x: hidden;
+        min-height: 700px;
+        background-color: black;
+    }
+/*-----------------Visible o Invisible------------------------------------------*/
+
+.invisible{
+    display: none;
+}
+
+.visible{
+    display: block;
+}
+
+/*----------------------Contenedores por ID-----------------------------------------------*/
+
+#c2{
+    background: url(./fotos/foto2.jpg);
+}
+#c2>.contenedor>.imagen{
+    background: url(./fotos/foto8.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+#c3{
+    background: url(./fotos/foto3.jpg);
+}
+#c3>.contenedor>.imagen{
+    background: url(./fotos/foto9.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+#c4{
+    background: url(./fotos/foto4.jpg);
+}
+#c4>.contenedor>.imagen{
+    background: url(./fotos/foto10.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+#c5{
+    background: url(./fotos/foto5.jpg);
+}
+#c5>.contenedor>.imagen{
+    background: url(./fotos/foto11.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+#c6{
+    background: url(./fotos/foto6.jpg);
+}
+#c6>.contenedor>.imagen{
+    background: url(./fotos/foto12.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+/*---------------------Barra Navegacion----------------------------------------------------*/
+
+#barraNavegacion{
+    background-color:rgb(94, 19, 87);
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    flex-direction: row;
+    font-size: 1.2em;
+    width: 100%;
+    color: whitesmoke;
+    align-items: center;
+    height: 60px;
+}
+    .nav{
+        position: relative;
+        padding: 20px 2.7%;
+        border-right: 2px solid black;
+        border-color: rgb(207, 207, 202);
+        cursor: pointer;
+    }
+    .nav{
+        transition: all 1s ease;
+        background-color:rgb(94, 19, 87);
+    }
+    .nav:hover{
+        transition: all 1s ease;
+        background-color:rgb(133, 74, 141);
+    }
+    #navInicio{
+        padding: 9px 15px;
+        font-size: 2em;
+        width: 40.25%;
+    }
+    #navInicio:hover{
+        background-color:rgb(94, 19, 87);
+    }
+
+
+
+    #barraNavegacion{
+        display: none;
+    }
+
+
+
+/*-----------------Contenedor Cursos----------------------------------------------*/
+
+main{
+    height: 100vh;
+}
+
+.contenedorCursos{
+    position: relative;
+    top: 0;
+    background:url(./fotos/foto1.jpg);
+    background-size: cover;
+    /* height: calc(100vh - 110px); */
+    height: 100%;
+    width: 100vw;
+    color: whitesmoke;
+}
+    .contenedor{
+        background-color: rgba(14, 3, 14, 0.8);
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        width: 80%;
+        height: 80%;
+        margin: 0% 10%;
+        margin-top: 5%;
+        margin-left: 10;
+        align-items: center;
+    }
+        .titulo{
+            font-size: 2em;
+            display: flex;
+            width: 80%;
+            justify-content: center;
+            margin: 3vh 0vw 5vh 0vw;
+        }
+        .imagen{
+            display: flex;
+            align-self: center;
+            height: 350px;
+            width: 500px;
+            background:url(./fotos/logo.jpg);
+            background-position: center;
+            background-size: cover;
+            border: 1px solid whitesmoke;
+            border-radius: 10px;
+        }
+        .parrafo{
+            display: flex;
+            font-size: 1.5em;
+            top: 75%;
+            width: 95%;
+            text-align: justify;
+            margin: 3vh;
+        }
+
+/*-----------------Footer-----------------------------------------------------*/
+
+#piePagina{
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    background-color: rgb(94, 19, 87);
+    height: 7%;
+    font-size: 1.5em;
+    height: 50px;
+    width: 100%;
+    color: whitesmoke;
+    justify-content: center;
+    align-items: center;
+}
+
+/*------------------------------------------------------------*/
+@media screen and (max-width:900px){
+
+/*CAPA SUPERIOR DEL MENU HAMBURGUESA,
+EL CHECKBOX VA POR ENCIMA DEL CONTENEDOR Y LAS LINEAS.*/
+#invisibleCheckbox{
+    position: absolute;
+    top: 0px;
+    right: 2%;
+    margin-top: 1%;
+    width: 60px;
+    height: 60px;
+    opacity: 0;
+    z-index: 500;
+}
+
+/*CAPA INTERMEDIA DEL MENU HAMBURGUESA,
+LAS LINEAS ESTAN VISIBLE POR ENCIMA DEL CONTENEDOR.*/
+
+/*Esta es la linea intermedia*/
+.lineaHamburguesa{
+    background-color: whitesmoke;
+    display: inline-block;
+    height: 5px;
+    left: 10px;
+    margin-top: -1px;
+    position: absolute;
+    top: 50%;
+    transition: .4s;
+    width: 40px;
+    border-radius: 2px;
+}
+
+/*Esta es la linea superior*/
+.lineaHamburguesa:first-child{
+    
+    display: inline-block;
+    height: 5px;
+    left: 10px;
+    margin-top: -1px;
+    position: absolute;
+    top: 25%;
+    transition: .4s;
+    width: 40px;
+    border-radius: 2px;
+}
+
+/*Esta es la linea inferior*/
+.lineaHamburguesa:last-child{
+    
+    display: inline-block;
+    height: 5px;
+    left: 10px;
+    margin-top: -1px;
+    position: absolute;
+    top: 75%;
+    transition: .4s;
+    width: 40px;
+    border-radius: 2px;
+}
+
+/*CAPA INFERIOR, ES EL CONTENEDOR DEL MENU HAMBURGUESA,
+SIMPLEMENTE ESTA DE FONDO.*/
+#contenedorHamburguesa{
+    display: inline-block;
+    position: absolute;
+    right: 2%;
+    margin-top: 1%;
+    width: 60px;
+    height: 60px;
+    z-index: 5;
+}
+
+
+}/*media query*/

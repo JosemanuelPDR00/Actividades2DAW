@@ -1,0 +1,308 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arima Madurai;
+}
+
+/*---------------ENCABEZADO DORADO----------------------------*/
+
+.encabezadoInicio{
+    background-color: goldenrod;
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    top: 0;
+    color: whitesmoke;
+}
+.enlaceInicio{
+    color: whitesmoke;
+    font-size: 1.2em;
+}
+
+/*--------------------WELCOME + IMAGEN LATERAL----------------------------------------*/
+
+.contenedorInicial{
+    margin-top: 7vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.contenedorImgInicial{
+    flex:1 0 37%;
+}
+.contenedorTituloInicial{
+    flex:1 0 50%;
+}
+#imgEstructura{
+    height: 150px;
+    width: 150px;
+}
+#tituloInicial{
+    display: flex;
+    color: #4ABDAC;
+    font-size: 2.5em;
+}
+
+/*-------------------BARRA DE PERSONAJES---------------------------------------------------------*/
+
+.contenedorEnlaces{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 5vh;
+    margin-bottom: 2vh;
+}
+.enlace{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 16.6vw;
+    height: 5vh;
+    margin: 2px;
+    background-color: #4ABDAC;
+    color: whitesmoke;
+    font-size: 1.5em;
+}
+
+/*--------------------------TRES CONTENEDORES FINALES--------------------------------------------------------------*/
+
+.contenedorGeneral{
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+}
+
+/*--------------------------CONTENEDOR 1------------------------------------------------------------*/
+
+.contenedor1{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+}
+.cajaContenedorPar:nth-child(odd){
+    align-self: flex-end;
+}
+
+.tituloContenedor1{
+    color: #4ABDAC;
+    display: flex;
+    margin-bottom: 2vh;
+    margin-left: 0.5vw;
+    font-size: 1.5em;
+}
+
+.cajaContenedorImpar , .cajaContenedorPar{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #4ABDAC;
+    border-radius: 5px;
+    margin-bottom: 2vh;
+    width: 75%;
+    margin: 0.5vw;
+    background-color: #fc4a1a;
+}
+.cajaContenedorPar{
+    background-color: #f7b733;
+}
+
+.tituloCajaContenedor1{
+    display: flex;
+    background-color: #4ABDAC;
+    justify-content: center;
+    margin: 1vh;
+    padding: 1vh;
+    border-radius: 5px;
+    font-size: 1.2em;
+}
+.textoCajaContenedor1{
+    display: flex;
+    text-align: justify;
+    padding: 10px;
+}
+
+
+/*--------------------------CONTENEDOR 2------------------------------------------------------------*/
+
+.contenedor2{
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+}
+.tituloContenedor2{
+    color: #4ABDAC;
+    display: flex;
+    margin-bottom: 2vh;
+    margin-left: 0.5vw;
+    font-size: 1.5em;
+}
+.cajaContenedor2{
+    display: flex;
+    margin:0.5vw;
+    background-color: #dfdce3;
+    border: 2px solid #4ABDAC;
+}
+.imgKenny{
+    float: left;
+    width: 7vw;
+    height: 7vw;
+    padding: 0;
+    margin: 0;
+}
+b{
+    color: rgb(167, 13, 13);
+}
+.textoCajaContenedor2{
+    float: left;
+    text-align: justify;
+    padding: 8px;
+    font-size: 1em;
+}
+
+/*--------------------------CONTENEDOR 3------------------------------------------------------------*/
+
+.contenedor3{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 30%;
+}
+
+.contenedorPinguinos{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: -4.5vh;
+    align-content: flex-start;
+}
+
+.tituloContenedor3{
+    color: #4ABDAC;
+    display: flex;
+    flex-direction: row;
+    height: 5vh;
+    width: 100%;
+    margin-bottom: 2vh;
+    margin-left: 0.5vw;
+    font-family: Arima Madurai;
+    font-size: 1.5em;
+}
+
+.cajaContenedor3{
+    display: flex;
+    width: 14vw;
+    flex-direction: column;
+    border: 2px solid #4ABDAC;
+    align-items: center;
+    margin: 0.5vw;
+}
+
+.imgPingu{
+    display: flex;
+    width: 13.8vw;
+}
+
+.tituloCajaContenedor3{
+    display: flex;
+    color: #fc4a1a;
+    font-weight: bold;
+    margin: 2vh;
+    font-size: 1.2em;
+}
+
+.textoCajaContenedor3{
+    padding: 0px 10px;
+    text-align: justify;
+}
+
+.enlaceBotonContenedor3{
+    display: flex;
+    background-color: #f7b733;
+    color: whitesmoke;
+    margin-top: 1vh;
+    width: 100%;
+    margin-left: 10px;
+    margin-right: 10px;
+    justify-content: center;
+}
+.enlacePingu{
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    text-decoration: none;
+    margin: 1vh 0vh;
+    font-size: 1.2em;
+}
+
+/*---------------------------------------------------------*/
+footer{
+    display: flex;
+    background-color: #f7b733;
+    width: 100%;
+    height: 8vh;
+    font-size: 1.5em;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+/*--------------------------------------------------------------*/
+
+@media screen and (max-width:850px){
+    .contenedorEnlaces{
+        flex-flow: column wrap;
+        height: auto;
+    }
+    .enlace{
+        height: auto;
+        width: 100%;
+    }
+    /*--------------------------------------*/
+    .contenedorGeneral{
+        width: 100vw;
+        display: flex;
+        flex-flow: column wrap;
+    }
+    /*--------------------------------------*/
+    .contenedor2{
+        flex-flow: column wrap;
+        width: 100%;
+        width: 100%;
+        order: 1;
+    }
+    /*--------------------------------------*/
+    .contenedor3{
+        flex-flow: column wrap;
+        width: 100vw;
+        order: 2;
+    }
+    .contenedorPinguinos{
+        width: 100vw;
+        display: flex;
+        flex-flow: column wrap;
+        align-content: center;
+        margin-top: 5vh;
+        
+    }
+    .cajaContenedor3{
+        display: flex;
+        width: 100%;
+        flex-flow: column wrap;
+    }
+    .imgPingu{
+        display: flex;
+        width: 90vw;
+    }
+    /*--------------------------------------*/
+    .contenedor1{
+        flex-flow: column wrap;
+        width: 100%;
+        order: 3;
+    }
+    .cajaContenedorImpar , .cajaContenedorPar{
+        width: 90%;
+    }
+}
