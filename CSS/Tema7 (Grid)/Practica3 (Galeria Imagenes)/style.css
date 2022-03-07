@@ -1,0 +1,158 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+#contenedorGeneral{
+    background-color: #F1E1FF;
+    font-family: 'Oregano', cursive;
+    font-size: 1.5em;
+}
+
+/*-------------------------------------------------------------*/
+
+#contenedorInicial{
+    background-image: url(./images/cielo.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    padding: 20px;
+}
+#titulo{
+    margin-bottom: 30px;
+}
+
+/*--------------------------------------------------------------------------*/
+
+#contenedorImagenes{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px, 1fr));
+    background-color:#dfa8f8;
+    margin: 0vh 5vw;
+}
+.contenedor{
+    position: relative;
+    height: 300px;
+    background-color: indigo;
+    margin: 10px;
+    border-radius: 15px;
+}
+.parrafoSuperior{
+    background-color: hsl(0, 0%, 96%,60%);
+    width:100%;
+    border-radius: 15px 15px 0px 0px;
+    position: absolute;
+    padding-left: 10px;
+}
+.parrafoInferior{
+    background-color: hsl(0, 0%, 96%,60%);
+    width:100%;
+    border-radius: 0px 0px 15px 15px;
+    position: absolute;
+    bottom: 0;
+    text-align: end;
+    padding-right: 10px;
+}
+
+.contenedor:hover{
+    transform-origin: center;
+    transform: scale(105%);
+    transition: 1s all ease;
+}
+.contenedor:hover>.parrafoSuperior{
+    transition: 1s all ease;
+    opacity: 0;
+}
+.contenedor:hover>.parrafoInferior{
+    transition: 1s all ease;
+    opacity: 0;
+}
+/*----------------------------------------------------------------------------*/
+
+.Solitario1{
+    background: url(./images/f1.jpg);
+    background-size: cover;
+}
+.Solitario2{
+    background: url(./images/f2.jpg);
+    background-size: cover;
+}
+.Solitario3{
+    background: url(./images/f3.jpg);
+    background-size: cover;
+}
+.Solitario4{
+    background: url(./images/f4.jpg);
+    background-size: cover;
+}
+.Solitario5{
+    background: url(./images/f5.jpg);
+    background-size: cover;
+}
+.Solitario6{
+    background: url(./images/f6.jpg);
+    background-size: cover;
+}
+.Solitario7{
+    background: url(./images/f7.jpg);
+    background-size: cover;
+}
+.Solitario8{
+    background: url(./images/f8.jpg);
+    background-size: cover;
+}
+.Solitario9{
+    background: url(./images/f9.jpg);
+    background-size: cover;
+}
+.Solitario10{
+    background: url(./images/f10.jpg);
+    background-size: cover;
+}
+.Solitario11{
+    background: url(./images/f11.jpg);
+    background-size: cover;
+}
+.Solitario12{
+    background: url(./images/f12.jpg);
+    background-size: cover;
+}
+.Solitario13{
+    background: url(./images/f13.jpg);
+    background-size: cover;
+}
+.Solitario14{
+    background: url(./images/f14.jpg);
+    background-size: cover;
+}
+.Solitario15{
+    background: url(./images/f15.jpg);
+    background-size: cover;
+}
+.Solitario16{
+    background: url(./images/f16.jpg);
+    background-size: cover;
+}
+.Solitario17{
+    background: url(./images/f17.jpg);
+    background-size: cover;
+}
+.Solitario18{
+    background: url(./images/f18.jpg);
+    background-size: cover;
+}
+.Solitario19{
+    background: url(./images/f19.jpg);
+    background-size: cover;
+}
+.Solitario20{
+    background: url(./images/f20.jpg);
+    background-size: cover;
+}
+
+/*----------------------------------------------------------------------*/
+
+.piePagina{
+    margin-top: 2vh;
+    text-align: center;
+}

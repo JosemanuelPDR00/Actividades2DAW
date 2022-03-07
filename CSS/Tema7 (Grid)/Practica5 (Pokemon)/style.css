@@ -1,0 +1,254 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arima Madurai', cursive;
+}
+
+.espalda p{
+    margin: 32.5% 10%;
+    background-color:rgba(128, 128, 128, 0.4);
+    font-size: 2em;
+    border-radius: 15px;
+}
+
+.box{
+    padding-bottom: 48.75%;
+}
+
+.inner{
+    position: relative;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.giro{
+    transform: rotateY(180deg);
+}
+
+.front, .back{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.front{
+    background-color: #bbb;
+    color: black;
+
+}
+
+.back{
+    background: url(./images/pokeball.png);
+    color: whitesmoke;
+    transform: rotateY(180deg);
+    background-size: 100%;
+    padding-bottom: 100%;
+    border-radius: 15px;
+    border: 3px solid black;
+}
+
+.backES{
+    background: url(./images/pokeball2.jpg);
+    padding-bottom: 49.1%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 15px;
+}
+
+.backES p{
+    display: flex;
+    justify-content: center;
+    margin: 12.5% 5%;
+    background-color:rgba(128, 128, 128, 0.4);
+    font-size:2em;
+    border-radius: 15px;
+}
+
+h1,h2{
+    text-align: center;
+}
+
+.nombrePokemon{
+    position: absolute;
+    bottom: 5%;
+    margin-left: 5%;
+    width: 90%;
+    font-size: 200%;
+    background: rgb(31,20,215);
+    background: linear-gradient(180deg, rgba(31,20,215,1) 0%, rgba(168,26,170,1) 30%, rgba(218,28,153,1) 41%, rgba(218,28,153,1) 51%, rgba(222,27,112,1) 65%, rgba(231,26,26,1) 100%); 
+    border: 2px solid whitesmoke;
+    border-radius: 15px;
+    color: whitesmoke;
+    opacity: 0;
+}
+
+.front:hover>.nombrePokemon{
+    transition: all 0.5s ease;
+    opacity: 1;
+    animation: destello 2s ease 1s infinite normal forwards;
+}
+
+.front:not(:hover)>.nombrePokemon{
+    transition: all 0.5s ease;
+    opacity: 0;
+}
+@keyframes destello {
+    0%{
+        box-shadow: 0px 0px 10px 5px white;
+    }
+    
+    50%{
+        box-shadow: 0px 0px 0px 0px white;
+    }
+    100%{
+        box-shadow: 0px 0px 10px 5px white;
+    }
+}
+
+.rosa{
+    position: absolute;
+    top: 0;
+    border-radius: 15px;
+    width: 100%;
+    height: 100%;
+    background-color: #b10d67;
+    right: 0%;
+}
+.rosaES{
+    position: absolute;
+    top: 0;
+    border-radius: 15px;
+    width: 100%;
+    height: 100%;
+    background-color: #b10d67;
+    right: 0%;
+    margin-bottom: 10%;
+}
+
+.front:hover>.nombrePokemon>.rosa{
+    transition: width 3s ease 1s, opacity 0.3s ease 3s;
+    width: 0%;
+    opacity: 0;
+}
+
+.front:hover>.nombrePokemon>.rosaES{
+    transition: width 3s ease 1s, opacity 0.3s ease 3s;
+    width: 0%;
+    opacity: 0;
+}
+
+/*-----------------------------------------------------------------------*/
+
+#contenedorGeneral{
+    background-color: #76cabc;
+}
+
+#contenedorPokemon{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-auto-rows: 20vh;
+    gap: 25px;
+    padding: 15px;
+    background-color: rgb(128, 128, 128, 0.5);
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+}
+.rayquaza{
+    grid-area: 1/3/3/5;
+}
+
+.shaymin{
+    grid-column: span 2;
+}
+
+.darkrai{
+    grid-column: span 2;
+}
+.cartaPokemon{
+    position: relative;
+}
+/*-----------------------------------------------------------------------*/
+
+.c1{
+    border-radius: 15px;
+    border: 3px solid black;
+    background: url(./images/articuno.png), radial-gradient(#9ac1d8,rgb(240, 194, 120));
+    background-size: cover;
+    padding-bottom: 100%;
+}
+.c2{
+    border-radius: 15px;
+    border: 3px solid black;
+    background: url(./images/infernape.png), radial-gradient(#9ac1d8,rgb(240,194,120));
+    background-size: cover;
+    padding-bottom: 100%;
+}
+.c3{
+    border-radius: 15px;
+    border: 3px solid black;
+    background: url(./images/rayquaza.png), radial-gradient(rgb(252, 255, 84),#b10d67);
+    background-size: cover;
+    padding-bottom: 100%;
+}
+.c4{
+    border-radius: 15px;
+    border: 3px solid black;
+    background: url(./images/treecko.png), radial-gradient(#9ac1d8,rgb(240, 194, 120));
+    background-size: cover;
+    padding-bottom: 100%;
+}
+.c5{
+    border-radius: 15px;
+    border: 3px solid black;
+    background: url(./images/lucario.png), radial-gradient(#9ac1d8,rgb(240, 194, 120));
+    background-size: cover;
+    padding-bottom: 100%;
+}
+.c6{
+    border-radius: 15px;
+    border: 3px solid black;
+    background: url(./images/shaymin.png);
+    background-size: cover;
+    padding-bottom: 49%;
+}
+.c7{
+    border-radius: 15px;
+    border: 3px solid black;
+    background: url(./images/eevee.png), radial-gradient(#9ac1d8,rgb(240, 194, 120));
+    background-size: cover;
+    padding-bottom: 100%;
+}
+.c8{
+    border-radius: 15px;
+    border: 3px solid black;
+    background: url(./images/luxray.png), radial-gradient(#9ac1d8,rgb(240, 194, 120));
+    background-size: cover;
+    padding-bottom: 100%;
+}
+.c9{
+    border-radius: 15px;
+    border: 3px solid black;
+    background: url(./images/totodile.png), radial-gradient(#9ac1d8,rgb(240, 194, 120));
+    background-size: cover;
+    padding-bottom: 100%;
+}
+.c10{
+    border-radius: 15px;
+    border: 3px solid black;
+    background: url(./images/mimikyu.png), radial-gradient(#9ac1d8,rgb(240, 194, 120));
+    background-size: cover;
+    padding-bottom: 100%;
+}
+.c11{
+    border-radius: 15px;
+    border: 3px solid black;
+    background: url(./images/darkrai.png);
+    background-size: cover;
+    background-position: center;
+    padding-bottom: 49.15%;
+}

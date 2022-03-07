@@ -1,0 +1,221 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    max-width: 1500px;
+    margin: 0 auto;
+    background-color: rgb(75, 75, 75);
+}
+
+#contenedorGeneral{
+    display: grid;
+    background-color: #d69d36;
+    min-height: 1200px;
+    margin: auto;
+    grid-template-columns: repeat(6,1fr);
+}
+
+/*-------------------------------------------------------------------------*/
+
+#titulo{
+    height: 100px;
+    display: grid;
+    justify-content: left;
+    padding-left: 100px;
+    position: relative;
+    font-weight: bolder;
+    align-content: center;
+    font-family: 'Kodchasan', sans-serif;
+    font-size: 2em;
+}
+
+#imgUnesco{
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    background: url(./images/logo.png);
+    background-size: cover;
+    width: 80px;
+    height: 70px;
+    display: inline-block;
+    margin-top: 10px;
+}
+#tituloUnesco{
+    color: #d69d36;
+    display: inline-block;
+}
+
+/*----------------------------------------------------------------------------*/
+
+.contenedor{
+    display: grid;
+    padding: 20px;
+}
+
+.c1, .c7, .c8, .c9, .c14{
+    grid-column: span 2;
+}
+.c2{
+    grid-column: span 3;
+}
+
+.c1, .c2, .c5, .c6, .c7, .c8, .c9, .c10, .c11{
+    grid-row: span 2;
+}
+
+/*----------------------------------------------------------------*/
+
+.tituloContenedor{
+    color: #1c4985;
+    font-size: 1.3em;
+    font-family: 'Kodchasan', sans-serif;
+    text-align: justify;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.textoContenedor{
+    font-family: 'Maitree', serif;
+    text-align:justify;
+    margin-bottom: 10px;
+}
+
+.botonContenedor{
+    font-family: 'Kodchasan', sans-serif;
+    text-decoration: none;
+    border: 2px solid black;
+    text-align: center;
+    color: #ff9900;
+    background-color: #1c4985;
+}
+.botonContenedor:hover{
+    transition: 2s all ease;
+    background-color: black;
+    border: 2px solid #1c4985;
+    color: whitesmoke;
+}
+
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style-type:square;
+    font-weight:bold;
+    padding-left: 5px;
+}
+
+ul{
+    padding: 0px 15px;
+}
+
+.botonAparece{
+    text-align: center;
+    background-color: #d69d36;
+    color: #1c4985;
+    font-family: 'Kodchasan', sans-serif;
+    border: 2px solid #1c4985;
+    opacity: 0;
+    position: relative;
+    top: 0%;
+}
+
+.c2:hover>a>.botonAparece,.c3:hover>a>.botonAparece,.c4:hover>a>.botonAparece,.c5:hover>a>.botonAparece,.c6:hover>a>.botonAparece,.c7:hover>a>.botonAparece,.c10:hover>a>.botonAparece,.c11:hover>a>.botonAparece,.c12:hover>a>.botonAparece,.c13:hover>a>.botonAparece,.c14:hover>a>.botonAparece{
+    transition: 2s all ease;
+    top: 45%;
+    opacity: 0.75;
+}
+
+/*-------------------------------------------------------------*/
+
+#piePagina{
+    height: 5vh;
+    color: #ff9900;
+    margin: auto;
+    text-align: center;
+    padding-top: 2vh;
+    font-family: 'Kodchasan', sans-serif;
+    font-size: 1.5em;
+}
+
+/*----------------------------------------------------------*/
+
+#imagen1{
+    background: url(./images/f1.jpg);
+    background-size: cover;
+    background-position:center;
+    filter: grayscale(1);
+}
+
+#imagen2{
+    background: url(./images/f2.jpg);
+    background-size: cover;
+    background-position:center;
+    filter: grayscale(1);
+}
+
+#imagen3{
+    background: url(./images/f3.jpg);
+    background-size: cover;
+    background-position:center;
+    filter: grayscale(1);
+}
+
+#imagen4{
+    background: url(./images/f4.jpg);
+    background-size: cover;
+    background-position:center;
+    filter: grayscale(1);
+}
+#imagen5{
+    background: url(./images/f5.jpg);
+    background-size: cover;
+    background-position:center;
+    filter: grayscale(1);
+}
+#imagen6{
+    background: url(./images/f6.jpg);
+    background-size: cover;
+    background-position:center;
+    filter: grayscale(1);
+}
+#imagen7{
+    background: url(./images/f7.jpg);
+    background-size:cover;
+    background-position:center;
+    filter: grayscale(1);
+}
+#imagen8{
+    background: url(./images/f8.jpg);
+    background-size: cover;
+    background-position:center;
+    filter: grayscale(1);
+}
+#imagen9{
+    background: url(./images/f9.jpg);
+    background-size: cover;
+    background-position:center;
+    filter: grayscale(1);
+}
+#imagen10{
+    background: url(./images/f10.jpg);
+    background-size: cover;
+    background-position:center;
+    filter: grayscale(1);
+}
+#imagen11{
+    background: url(./images/f11.jpg);
+    background-size: cover;
+    background-position:center;
+    filter: grayscale(1);
+}
+
+/*----------------------------------------------------------*/
+
+#imagen1:hover,#imagen2:hover,#imagen3:hover,#imagen4:hover,#imagen5:hover,#imagen6:hover,#imagen7:hover,#imagen8:hover,#imagen9:hover,#imagen10:hover,#imagen11:hover{
+    transition: 2s all ease;
+    filter: grayscale(0);
+} 
