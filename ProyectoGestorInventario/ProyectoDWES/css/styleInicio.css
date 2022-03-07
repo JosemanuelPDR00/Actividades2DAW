@@ -1,0 +1,243 @@
+* {
+    border: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background-color: #EDF2EF;
+    font-family: 'Exo', sans-serif;
+}
+
+/*------------------------------------------------------------*/
+
+/*CAPA SUPERIOR DEL MENU HAMBURGUESA,
+EL CHECKBOX VA POR ENCIMA DEL CONTENEDOR Y LAS LINEAS.*/
+#invisibleCheckbox {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    margin-top: 2%;
+    left: 2%;
+    opacity: 0%;
+    z-index: 15;
+}
+
+/*CAPA INTERMEDIA DEL MENU HAMBURGUESA,
+LAS LINEAS ESTAN VISIBLE POR ENCIMA DEL CONTENEDOR.*/
+
+/*Esta es la linea intermedia*/
+.lineaHamburguesa {
+    background-color: #ffa19d;
+    display: inline-block;
+    height: 5px;
+    left: 10px;
+    margin-top: -1px;
+    position: absolute;
+    top: 50%;
+    transition: .4s;
+    width: 40px;
+    border-radius: 2px;
+}
+
+/*Esta es la linea superior*/
+.lineaHamburguesa:first-child {
+    background-color: #ffa19d;
+    display: inline-block;
+    height: 5px;
+    left: 10px;
+    margin-top: -1px;
+    position: absolute;
+    top: 25%;
+    transition: .4s;
+    width: 40px;
+    border-radius: 2px;
+}
+
+/*Esta es la linea inferior*/
+.lineaHamburguesa:last-child {
+    background-color: #ffa19d;
+    display: inline-block;
+    height: 5px;
+    left: 10px;
+    margin-top: -1px;
+    position: absolute;
+    top: 75%;
+    transition: .4s;
+    width: 40px;
+    border-radius: 2px;
+}
+
+/*CAPA INFERIOR, ES EL CONTENEDOR DEL MENU HAMBURGUESA,
+SIMPLEMENTE ESTA DE FONDO.*/
+#contenedorHamburguesa {
+    display: inline-block;
+    position: absolute;
+    left: 2%;
+    /*background-color: rgb(255, 104, 49);*/
+    width: 60px;
+    height: 60px;
+    margin-top: 2%;
+    z-index: 5;
+}
+
+/*--------------------------------------------------------------*/
+
+/*Cajon verde que lleva las secciones del menú*/
+#barraDesplegable {
+    position: absolute;
+    top: 0;
+    left: -20vw;
+    background-color: #C8E7ED;
+    height: 100vh;
+    width: 20vw;
+    text-align: left;
+    padding-top: 7%;
+}
+
+/*Secciones del menu hamburguesa*/
+.apartados {
+    margin-left: 10%;
+    margin-top: 1vh;
+    list-style: none;
+    font-family: 'Exo', sans-serif;
+    font-size: 1.5em;
+}
+
+/*--------------------------------------------------------------------*/
+
+/*Efecto de las secciones del menú*/
+li:hover {
+    font-weight: bold;
+    color: #ffa19d;
+}
+
+li:last-of-type {
+    font-weight: bold;
+    color: #ffa19d;
+}
+
+/*--------------------------------------------------------------*/
+
+/*Transicion de salida del menú hamburguesa*/
+#invisibleCheckbox:checked~#barraDesplegable {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition-duration: 0.5s;
+    transition-property: all;
+}
+
+/*Transicion de recogida del menú hamburguesa*/
+#invisibleCheckbox:not(:checked)~#barraDesplegable {
+    position: absolute;
+    top: 0;
+    left: -20vw;
+    transition-duration: 0.5s;
+    transition-property: all;
+}
+
+/*Transicion de rotacion de la barra superior del menú*/
+#invisibleCheckbox:checked~#contenedorHamburguesa>#linea1 {
+    background-color: #ffa19d;
+    transform: rotateZ(50deg);
+    transform-origin: left;
+}
+
+/*Transicion de ocultacion de la segunda barra del menú*/
+#invisibleCheckbox:checked~#contenedorHamburguesa>#linea2 {
+    background-color: #ffa19d;
+    transform: rotateY(90deg);
+    transform-origin: left;
+    opacity: 10;
+}
+
+/*Transicion de rotacion de la barra inferior del menú*/
+#invisibleCheckbox:checked~#contenedorHamburguesa>#linea3 {
+    background-color: #ffa19d;
+    transform: rotateZ(-50deg);
+    transform-origin: left;
+}
+
+/*----------------------------------------------------------------------------------------------------*/
+
+#logo {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 1vh;
+    text-align: center;
+    margin-left: 10%;
+    border: 3px solid black;
+    border-radius: 10px;
+}
+
+.fotoPerfil {
+    margin-left: 10%;
+    border: 1px solid black;
+    border-radius: 20px;
+    width: 200px;
+    height: 200px;
+}
+
+#nombreUsuario {
+    display: block;
+    margin-left: 10%;
+    margin-bottom: 5vh;
+}
+
+/*-----------------------------------------------------------------------------------------*/
+
+#contenedorLogo {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    text-align: center;
+}
+
+/*------------------------------------------------------------------*/
+
+#contenedorTabla {
+    margin: 50px 10%;
+    padding: 50px;
+    text-align: center;
+}
+
+table {
+    max-width: 900px;
+    margin: auto;
+    display: flex;
+    padding: 2vh 3vw;
+    justify-content: center;
+    background-color: #EDF2EF;
+    border-radius: 20px;
+}
+
+th {
+    padding: 5px;
+    background-color: #ACDFEB;
+}
+
+tr {
+    border: 1px solid black;
+}
+
+table tr:nth-child(odd) {
+    background-color: #ACDFEB;
+}
+
+table tr:nth-child(even) {
+    background-color: #DBEDEE;
+}
+
+td {
+    max-width: 100%;
+    overflow: hidden;
+    padding: 10px;
+}
+
+/*Prueba git**/
+
+a {
+    text-decoration: none;
+    color: unset;
+}

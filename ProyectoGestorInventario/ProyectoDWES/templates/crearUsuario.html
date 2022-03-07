@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro Usuario</title>
+    <link rel="stylesheet" href="./../css/crearUsuario.css">
+</head>
+
+<body>
+    <div id="contenedorImg"><img src="../img/LOGO.png" alt="LOGO"></div>
+    <h2>Registrar nuevo usuario</h2>
+    <form action="./../app/controller/registro.php" method="post" enctype="multipart/form-data">
+        <input type="text" name="nombre" id="nombre" class="inputTexto" placeholder="Nombre" required>
+        <input type="text" name="apellido1" id="apellidos" class="inputTexto" placeholder="Apellido 1" required>
+        <input type="text" name="apellido2" class="inputTexto" placeholder="Apellido 2" required>
+        <input type="email" name="correo" id="email" class="inputTexto" placeholder="Correo" required>
+        <input type="password" name="passwd" id="contraseña" class="inputTexto" placeholder="Contraseña" required>
+        <input type="password" name="repContraseña" id="repContraseña" class="inputTexto"
+            placeholder="Repetir Contraseña" required>
+        <input type="date" name="fechaNac" required>
+        <div id="doble">
+            <input type="file" name="imagen" id="foto" class="inputTexto" required>
+            <input type="submit" id="registro" name="registro" value="Registrarse">
+        </div>
+    </form>
+</body>
+
+</html>

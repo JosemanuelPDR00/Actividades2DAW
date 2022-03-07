@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/registroProducto.css">
+</head>
+
+<body>
+    <div id="contenedorImagen">
+        <img src="../img/LOGO.png" alt="Logo">
+    </div>
+    <h2>REGISTRA UN NUEVO PRODUCTO</h2>
+    <form action="./../app/controller/registroProducto.php" method="post" enctype="multipart/form-data">
+        <input type="text" name="nombre" placeholder="Nombre Producto" required>
+        <input type="number" name="cantidad" placeholder="Cantidad" required>
+        <input type="text" name="proveedor" placeholder="Proveedor" required>
+        <input type="text" name="categoria" placeholder="Categoria" required>
+        <input type="number" name="precio" placeholder="Precio" step="0.01" required>
+        <textarea name="descripcion" id="descripcion" cols="30" rows="10" placeholder="Descripcion" required></textarea>
+        <input type="file" name="imagen" id="foto" required>
+        <input type="text" name="nif" id="nif" placeholder="NIF" required>
+        <input type="submit" name="enviar" id="registro" value="Registrar Producto">
+    </form>
+</body>
+
+</html>
